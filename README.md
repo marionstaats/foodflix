@@ -2,6 +2,8 @@
 
 This is small site with catalog of video-recipes. Site consist of next pages:
 
+URL: https://marionstaats.github.io/foodflix/
+
 1. Home page with nav-bar, search-bar, catalog of categories, icon for sing up and for sign in.
 
 ![Home page](./wireframes/Home-page.png)
