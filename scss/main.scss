@@ -1,0 +1,99 @@
+// Global
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Concert One', cursive;
+  a {
+    text-decoration: none;
+  }
+}
+
+body {
+  margin: 2em;
+  text-align: center;
+
+      // nav-bar
+      #nav-bar{
+        // aligning
+        min-height: 3em;
+        display: flex;
+        justify-content: space-between;
+
+        // elements
+          #user{
+            display: flex;
+
+            #user-register {
+              margin-right: 40px;
+            }
+
+            p{
+              color: black;
+            }
+          }
+
+        .fas {
+          font-size: 40px;
+          color: #9d4e15;
+          margin: 7px;
+        }
+
+        .fa-thumbs-up{
+          display: flex;
+          align-items: center;
+          font-size: 60px;
+          color: #9d4e15;
+        }
+        
+      }
+
+      // search-field
+      #search-bar{
+        // aligning
+        margin-top: 20px;
+        margin-bottom: 50px;
+        min-height: 450px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column; 
+
+        // background
+        background-image: url('/scss/pexels-fauxels-3184192.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+
+        // elements
+          h1{
+            color: white;
+            font-size: 140px;
+            text-shadow: 4px 4px black;
+          }
+
+          p{
+            color: white;
+            font-size: 50px;
+            text-shadow: 3px 3px black;
+          }
+
+          #research{
+            margin-top: 20px;
+            margin-bottom: 10px;
+            padding: 6px;
+            min-width: 300px;
+            border-radius: 5px;
+          }
+
+          #submit {
+            padding: 6px;
+            border-radius: 5px;
+            font-size: 25px;
+            background-color: white;
+          }
+      }
+
+      // showroom
+}
+
