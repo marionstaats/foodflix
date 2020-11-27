@@ -73,7 +73,7 @@ body #search-bar {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  background-image: url("scss/pexels-fauxels-3184192.jpg");
+  background-image: url("pexels-fauxels-3184192.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
