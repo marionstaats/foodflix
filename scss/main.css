@@ -13,6 +13,7 @@
 body {
   margin: 2em;
   text-align: center;
+  position: relative;
 }
 
 body #nav-bar {
@@ -23,6 +24,21 @@ body #nav-bar {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+}
+
+body #nav-bar #logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body #nav-bar #logo h2 {
+  font-size: 60px;
+  color: #9d4e15;
+  margin-right: 10px;
 }
 
 body #nav-bar #user {
@@ -43,6 +59,10 @@ body #nav-bar .fas {
   font-size: 40px;
   color: #9d4e15;
   margin: 7px;
+}
+
+body #nav-bar .fas:hover {
+  color: #874312;
 }
 
 body #nav-bar .fa-thumbs-up {
@@ -73,7 +93,7 @@ body #search-bar {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  background-image: url("/scss/pexels-fauxels-3184192.jpg");
+  background-image: url("pexels-fauxels-3184192.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -104,5 +124,107 @@ body #search-bar #submit {
   border-radius: 5px;
   font-size: 25px;
   background-color: white;
+}
+
+body #register-background {
+  margin-top: 20px;
+  margin-bottom: 50px;
+  min-height: 450px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-image: url("pexels-fauxels-3184192.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.6;
+}
+
+body #user-form {
+  z-index: 1;
+  position: absolute;
+  top: 40px;
+  left: 30%;
+  right: 30%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  min-height: 600px;
+  background-color: white;
+  padding: 25px;
+  -webkit-box-shadow: 3px 3px 6px #706f6f;
+          box-shadow: 3px 3px 6px #706f6f;
+  border-radius: 5px;
+  margin-bottom: 50px;
+}
+
+body #user-form h1 {
+  font-size: 40px;
+  margin-bottom: 15px;
+}
+
+body #user-form input {
+  font-size: 20px;
+  padding: 5px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+body #user-form label {
+  font-size: 20px;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+}
+
+body #user-form #gender {
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  padding-right: 15px;
+}
+
+body #user-form #preferences {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto auto;
+      grid-template-columns: auto auto;
+  gap: 5px;
+  text-align: left;
+  padding-left: 20px;
+}
+
+body #user-form #btn {
+  background-color: #9d4e15;
+  color: white;
+  font-size: 25px;
+  padding: 8px;
+  width: 300px;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  border: 1px solid white;
+  -webkit-box-shadow: 1px 1px 3px #706f6f;
+          box-shadow: 1px 1px 3px #706f6f;
+}
+
+body #user-form #btn:hover {
+  background-color: #874312;
+}
+
+body #user-form legend {
+  font-size: 20px;
 }
 /*# sourceMappingURL=main.css.map */

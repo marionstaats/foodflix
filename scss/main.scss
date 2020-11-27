@@ -12,6 +12,7 @@
 body {
   margin: 2em;
   text-align: center;
+  position: relative;
 
       // nav-bar
       #nav-bar{
@@ -20,7 +21,19 @@ body {
         display: flex;
         justify-content: space-between;
 
-        // elements
+          // elements left side
+          #logo {
+            display: flex;
+            align-items: center;
+
+              h2{
+                font-size: 60px;
+                color: #9d4e15;
+                margin-right: 10px;
+              }
+          }
+
+          // elements right side
           #user{
             display: flex;
 
@@ -39,6 +52,10 @@ body {
           margin: 7px;
         }
 
+        .fas:hover {
+          color: #874312;
+        }
+
         .fa-thumbs-up{
           display: flex;
           align-items: center;
@@ -47,8 +64,8 @@ body {
         }
         
       }
-
-      // search-field
+      // --------------------******-------------------
+      // search-field HOME PAGE
       #search-bar{
         // aligning
         margin-top: 20px;
@@ -60,10 +77,11 @@ body {
         flex-direction: column; 
 
         // background
-        background-image: url('/scss/pexels-fauxels-3184192.jpg');
+        background-image: url('pexels-fauxels-3184192.jpg');
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
+        
 
         // elements
           h1{
@@ -93,7 +111,99 @@ body {
             background-color: white;
           }
       }
+      // --------------------******-------------------
+      // main field REGISTER PAGE
+      #register-background {
+        // aligning
+        margin-top: 20px;
+        margin-bottom: 50px;
+        min-height: 450px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column; 
 
-      // showroom
+        // background
+        background-image: url('pexels-fauxels-3184192.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        opacity: 0.6;
+
+      }
+
+      // user-form
+      #user-form {
+        // positioning
+        z-index: 1;
+        position: absolute;
+        top: 40px;
+        left: 30%;
+        right: 30%;
+
+        // aligning
+        display: flex;
+        flex-direction: column;
+        
+        min-height: 600px;
+        background-color: white;
+        padding: 25px;
+        box-shadow: 3px 3px 6px rgb(112, 111, 111);
+        border-radius: 5px;
+        margin-bottom: 50px;
+
+          h1{
+            font-size: 40px;
+            margin-bottom: 15px;
+          }
+
+          input{
+            font-size: 20px;
+            padding: 5px;
+            border: 1px solid black;
+            border-radius: 5px;   
+          }
+
+          label{
+            font-size: 20px;
+            align-self: flex-start;
+          }
+
+          #gender {
+            align-self: flex-start;
+          }
+
+          #preferences {
+            display: grid;
+            grid-template-columns: auto auto;
+            gap: 5px;
+            text-align: left;
+            padding-left: 20px;
+          }
+
+          #btn {
+            background-color: #9d4e15;
+            color: white;
+            font-size: 25px;
+            padding: 8px;
+            width: 300px;
+            align-self: center;
+            border: 1px solid white;
+            box-shadow: 1px 1px 3px rgb(112, 111, 111);
+          }
+
+          #btn:hover {
+            background-color: #874312;
+          }
+
+          legend {
+            font-size: 20px;
+          }
+
+      }
+      
+
 }
+
+
 
