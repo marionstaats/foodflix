@@ -11,7 +11,7 @@ $errors = array();
 
 //connect to db
 
-$db = mysqli_connect('localhost','root','','foodflix') or die("could not connect to database"); //server, user, pw, database name
+$db = mysqli_connect('sql210.epizy.com','epiz_27350002','rbxI8DLfu7M','epiz_27350002_foodflix') or die("could not connect to database"); //server, user, pw, database name
 
 //Registering users
 
