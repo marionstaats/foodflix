@@ -41,9 +41,9 @@
       <div id="user-account">
         <img src="../scss/chef-women.png" alt="" id="avatar">
         <div id="greetings">
-          <h1>Hello, UserName!</h1>
+          <h1>Hello, <?php echo $_SESSION['username']?>!</h1>
           <div id="manage-profile">
-            <p id="email">Email: username@hotmail.com</p>
+            <p id="email">Email: <?php echo 'email'?></p>
             <p id="password">Password: ****</p>
 
             <a href="register.php">Manage your profile</a>
