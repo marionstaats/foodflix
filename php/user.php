@@ -21,7 +21,7 @@
         <i class="far fa-thumbs-up"></i>
       </div>
       
-      <!-- <div id="user">
+      <div id="user">
           <div id="user-register">
               <a href="index.php">
                   <i class="fas fa-home"></i>
@@ -29,39 +29,33 @@
               </a>
           </div>
           <div id="user-login">
-              <a href="index.php">
-                  <i class="fas fa-sign-out-alt"></i>
-                  <p>Log out</p>
-              </a>
-              
+            <form action="index.php" method="post">
+                    <button type="submit" name="logout"><a href="index.php"><i class="fas fa-sign-in-alt"></i><p>Log out</p></a></button>
+                </form>   
           </div>
-      </div> -->
+      </div>
     </div>
     
-    <!-- Login -->
-    <div class="container">
-        <div class="header">
-            <h2>Login</h2>
+    <div id="user-info">
+      <!-- user account -->
+      <div id="user-account">
+        <img src="../scss/chef-women.png" alt="" id="avatar">
+        <div id="greetings">
+          <h1>Hello, UserName!</h1>
+          <div id="manage-profile">
+            <p id="email">Email: username@hotmail.com</p>
+            <p id="password">Password: ****</p>
+
+            <a href="register.php">Manage your profile</a>
+          </div>
         </div>
-         
-        <form action="login.php" method="post">
+      </div>
 
-            <?php include('errors.php'); ?>
-            
-            <div>
-                <label for="username">Username : </label>
-                <input type="text" name="username" required>
-            </div>
-            <div>
-                <label for="password">Password : </label>
-                <input type="password" name="password" required>
-            </div>
-            <button type="submit" name="login_user"> Submit </button>
-
-            <p>Not a user? <a href="registration.php">Register here</a></p>
-
-        </form>
-        <?php endif ?>
+      <!-- favorite videos -->
+      <h1>My favorite video:</h1>
+      <div>
+        <br><br><br>
+      </div>
     </div>
 
 </body>

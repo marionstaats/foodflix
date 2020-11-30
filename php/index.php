@@ -20,6 +20,7 @@ if(isset($_POST['logout'])){ //logging out
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Foodflix</title>
+    <link rel="icon" href="../scss/pan.png">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="stylesheet" href="../scss/main.css">
     <link href="https://fonts.googleapis.com/css2?family=Concert+One&display=swap" rel="stylesheet">
@@ -32,13 +33,13 @@ if(isset($_POST['logout'])){ //logging out
         <i class="far fa-thumbs-up"></i>
         <div id="user">
             <div id="user-register">
-                <a href="login.php">
-                    <i class="fas fa-sign-in-alt"></i>
-                    <p>Log out</p>
-                </a>
+                <form action="index.php" method="post">
+                    <button type="submit" name="logout"><a href="index.php"><i class="fas fa-sign-in-alt"></i><p>Log out</p></a></button>
+                </form>
+
             </div>
             <div id="user-login">
-                <a href="login.html">
+                <a href="user.php">
                     <i class="fas fa-user-circle"></i>
                     <p>User</p>
                 </a>

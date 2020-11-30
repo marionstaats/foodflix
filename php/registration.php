@@ -6,6 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Foodflix</title>
+    <link rel="icon" href="../scss/pan.png">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="stylesheet" href="../scss/main.css">
     <link href="https://fonts.googleapis.com/css2?family=Concert+One&display=swap" rel="stylesheet">
@@ -20,12 +21,6 @@
         </div>
         
         <div id="user">
-            <div id="user-register">
-                <a href="index.php">
-                    <i class="fas fa-home"></i>
-                    <p>Home</p>
-                </a>
-            </div>
             <div id="user-login">
                 <a href="login.php">
                     <i class="fas fa-user-circle"></i>
@@ -48,7 +43,7 @@
         <h1>Welcome to FoodFlix!</h1>
         <!-- Username -->
         <label for="username">Username:</label>
-        <input type="text" id="username" name="username"><br>
+        <input type="text" id="username" name="username" required><br>
         
         <!-- Gender for avatar in user-account -->
         <div id="gender">
@@ -60,11 +55,11 @@
         
         <!-- Registration info -->
         <label for="email">Email:</label>
-        <input type="email" id="email" name="email"><br>
+        <input type="email" id="email" name="email" required><br>
         <label for="password_1">Password:</label>
-        <input type="password" id="password_1" name="password_1"><br>
+        <input type="password" id="password_1" name="password_1" required><br>
         <label for="password_2">Confirm password:</label>
-        <input type="password" id="password_2" name="password_2"><br><br>
+        <input type="password" id="password_2" name="password_2" required><br><br>
 
         <!-- Recipe preferences -->
         <fieldset >
