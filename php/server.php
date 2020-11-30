@@ -57,7 +57,7 @@ if(isset($_POST['reg_user'])){
 
     if (count($errors)== 0){
         $password = password_hash($password_1, PASSWORD_DEFAULT); //encrypt password
-        $query = "INSERT INTO user (username, email, password) VALUES ($username', '$email', '$password')";
+        $query = "INSERT INTO user (username, email, password) VALUES ('$username', '$email', '$password')";
         
         mysqli_query($db,$query); //to run a query - first where? then what?
         $_SESSION['username'] = $username;
@@ -82,11 +82,11 @@ if(isset($_POST['login_user'])){//if button has been clicked on login page
     }
 
     if(count($errors)==0){
-        $password = password_hash($password, PASSWORD_DEFAULT);
-        $query = "SELECT * FROM  user WHERE username='$username' AND password='$password'";
-        $results = mysqli_query($db, $query);
+        $query = "SELECT password FROM  user WHERE username='$username'";
+        $query2 = "SELECT * FROM  user WHERE username='$username'";
+        $results = mysqli_query($db, $query2);
 
-        if(mysqli_num_rows($results)){ //if password and username match start session
+        if((mysqli_num_rows($results)) && (password_verify($password,mysqli_fetch_assoc(mysqli_query($db,$query))['password']))){ //if password and username match start session
             $_SESSION['username'] = $username;
             $_SESSION['success'] = "Logged in successfully";
             header('location: index.php');

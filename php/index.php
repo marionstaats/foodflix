@@ -32,13 +32,13 @@ if(isset($_POST['logout'])){ //logging out
         <i class="far fa-thumbs-up"></i>
         <div id="user">
             <div id="user-register">
-                <a href="login.php">
-                    <i class="fas fa-sign-in-alt"></i>
-                    <p>Log out</p>
-                </a>
+                <form action="index.php" method="post">
+                    <button type="submit" name="logout"><a href="index.php"><i class="fas fa-sign-in-alt"></i><p>Log out</p></a></button>
+                </form>
+
             </div>
             <div id="user-login">
-                <a href="login.html">
+                <a href="user.php">
                     <i class="fas fa-user-circle"></i>
                     <p>User</p>
                 </a>
