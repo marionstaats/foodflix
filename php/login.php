@@ -59,15 +59,16 @@
       </div>
     </div>
     <!-- Login page -->
+    <?php if(!isset($_SESSION['username'])) :?>
     <div class="container">
         <div class="header">
             <h2>Login</h2>
         </div>
-
+         
         <form action="login.php" method="post">
 
             <?php include('errors.php'); ?>
-
+            
             <div>
                 <label for="username">Username : </label>
                 <input type="text" name="username" required>
@@ -81,7 +82,7 @@
             <p>Not a user? <a href="registration.php">Register here</a></p>
 
         </form>
-
+        <?php endif ?>
     </div>
 
 </body>
