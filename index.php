@@ -1,5 +1,4 @@
 <?php
-
 session_start();
 
 if(!isset($_SESSION['username'])){ //not logged in yet
@@ -47,11 +46,12 @@ if(isset($_POST['logout'])){ //logging out
             </div>
         </div>
     </div>
+
     <!-- If user logs in print info about him -->
 
     <?php
         if(isset($_SESSION['username'])) : ?>
-        <h3>Welcome <?php echo $_SESSION['username']; ?></h3>
+        <h3 style="font-size: 3em;">Welcome <?php echo $_SESSION['username']; ?></h3>
     <?php endif ?>
 
     <!-- searcing field -->
@@ -77,7 +77,6 @@ if(isset($_POST['logout'])){ //logging out
     </div>
     <?php endif //to finish if statement above ?>
 
-    <!--javascript  -->
     <script src="javascript/index.js"></script>
 </body>
 </html>
