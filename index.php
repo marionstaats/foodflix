@@ -86,6 +86,6 @@ if(isset($_POST['logout'])){ //logging out
     <?php endif ?>
 
     <!--javascript  -->
-    <script src="/javascript/index.js"></script>
+    <script src="javascript/index.js"></script>
 </body>
 </html>
