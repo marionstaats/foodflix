@@ -167,7 +167,7 @@ body {
         }
       }
       // --------------------******-------------------
-      // main field REGISTER PAGE
+      // main field REGISTER PAGE 
       #register-background {
         // aligning
         margin-top: 20px;
@@ -282,9 +282,95 @@ body {
         }
       }
       
+      // -------------------******------------------
+      // Main field LOGIN PAGE
+      #login-background {
+        // aligning
+        margin-top: 20px;
+        margin-bottom: 50px;
+        min-height: 450px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column; 
 
+        // background
+        background-image: url('pexels-fauxels-3184192.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        opacity: 0.6;
+
+      }
+      //Mobile version   
+      @media only screen and (max-width: 600px) {
+        #login-background{
+          min-height: 490px; 
+        }
+      }
+
+      // user-form
+      #login-form {
+        // positioning
+        z-index: 1;
+        position: absolute;
+        top: 165px;
+        left: 30%;
+        right: 30%;
+
+        // aligning
+        display: flex;
+        flex-direction: column;
+        
+        min-height: 315px;
+        background-color: white;
+        padding: 25px;
+        box-shadow: 3px 3px 6px rgb(112, 111, 111);
+        border-radius: 5px;
+        margin-bottom: 50px;
+      
+          #login{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            div, button, p{
+              margin:10px;
+            }
+            button{
+              font-size: 25px;
+              padding: 20px;
+              border-radius: 50%;
+              padding-right: 40px;
+              padding-left: 40px;
+            }
+            p{
+              font-size: 25px;
+              margin-top: 30px;
+            }
+          }
+          input{
+            font-size: 20px;
+            padding: 5px;
+            border: 1px solid black;
+            border-radius: 5px;   
+          }
+
+          label{
+            font-size: 20px;
+            align-self: flex-start;
+          }
+      }
+      //Mobile version   
+      @media only screen and (max-width: 600px) {
+        #login-form{
+          left: 10%;
+          right: 10%; 
+        }
+      }
+      
+     
       // --------------------******-------------------
-      // main field LOGIN PAGE
+      // main field USER PAGE
       #user-info {
         margin: auto;
         width: 700px;

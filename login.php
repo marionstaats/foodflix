@@ -19,32 +19,18 @@
       <div id="logo">
         <h2>FoodFlix</h2>
         <i class="far fa-thumbs-up"></i>
-      </div>
-      
-      <!-- <div id="user">
-          <div id="user-register">
-              <a href="index.php">
-                  <i class="fas fa-home"></i>
-                  <p>Home</p>
-              </a>
-          </div>
-          <div id="user-login">
-              <a href="index.php">
-                  <i class="fas fa-sign-out-alt"></i>
-                  <p>Log out</p>
-              </a>
-              
-          </div>
-      </div> -->
+      </div>      
+    </div>
+
+    <!-- main field -->
+    <div id="login-background">
     </div>
     
+    
     <!-- Login -->
-    <div class="container">
-        <div class="header">
-            <h2>Login</h2>
-        </div>
+    <div class="container" id="login-form">
          
-        <form action="login.php" method="post">
+        <form action="login.php" method="post" id="login">
 
             <?php include('errors.php'); ?>
             
@@ -53,10 +39,10 @@
                 <input type="text" name="username" required>
             </div>
             <div>
-                <label for="password">Password : </label>
+                <label for="password">Password :  </label>
                 <input type="password" name="password" required>
             </div>
-            <button type="submit" name="login_user"> Submit </button>
+            <button type="submit" name="login_user"> Login </button>
 
             <p>Not a user? <a href="registration.php">Register here</a></p>
 
