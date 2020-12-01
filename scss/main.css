@@ -58,6 +58,9 @@ body #nav-bar .fa-thumbs-up {
     font-size: 35px;
   }
 }
+body h3 {
+  font-size: 25px;
+}
 body #search-bar {
   margin-top: 20px;
   margin-bottom: 50px;
