@@ -22,9 +22,9 @@ if(isset($_POST['logout'])){ //logging out
     <title>Foodflix</title>
     <link rel="icon" href="scss/pan.png">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link rel="stylesheet" href="scss/main.css">
     <link href="https://fonts.googleapis.com/css2?family=Concert+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+    <link rel="stylesheet" href="scss/main.css">
 </head>
       
     <body>

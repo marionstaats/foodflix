@@ -4,7 +4,7 @@ document.getElementById("submit").addEventListener("click",()=>{
         element.remove();
     });
     
-    fetch("https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=6&q="+"recipe" + document.getElementById("research").value.trim().replace(/ +/g, " ").replaceAll(" ","+")+"&type=video&key=AIzaSyAFNjqD-9Vc2ajS4pwAS2MhFNMbD4Ca4CA")
+    fetch("https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&q="+"recipe" + document.getElementById("research").value.trim().replace(/ +/g, " ").replaceAll(" ","+")+"&type=video&key=AIzaSyAFNjqD-9Vc2ajS4pwAS2MhFNMbD4Ca4CA")
     .then(response=>response.json()).then((data)=>{
         data.items.forEach(element => {
             let iframe = document.createElement("iframe");
@@ -17,4 +17,3 @@ document.getElementById("submit").addEventListener("click",()=>{
         });
     })
 })
-
