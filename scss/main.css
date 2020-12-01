@@ -215,6 +215,75 @@ body #user-form legend {
     font-size: 28px;
   }
 }
+body #login-background {
+  margin-top: 20px;
+  margin-bottom: 50px;
+  min-height: 450px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-image: url("pexels-fauxels-3184192.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.6;
+}
+@media only screen and (max-width: 600px) {
+  body #login-background {
+    min-height: 490px;
+  }
+}
+body #login-form {
+  z-index: 1;
+  position: absolute;
+  top: 165px;
+  left: 30%;
+  right: 30%;
+  display: flex;
+  flex-direction: column;
+  min-height: 315px;
+  background-color: white;
+  padding: 25px;
+  box-shadow: 3px 3px 6px #706f6f;
+  border-radius: 5px;
+  margin-bottom: 50px;
+}
+body #login-form #login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body #login-form #login div, body #login-form #login button, body #login-form #login p {
+  margin: 10px;
+}
+body #login-form #login button {
+  font-size: 25px;
+  padding: 20px;
+  border-radius: 50%;
+  padding-right: 40px;
+  padding-left: 40px;
+}
+body #login-form #login p {
+  font-size: 25px;
+  margin-top: 30px;
+}
+body #login-form input {
+  font-size: 20px;
+  padding: 5px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+body #login-form label {
+  font-size: 20px;
+  align-self: flex-start;
+}
+@media only screen and (max-width: 600px) {
+  body #login-form {
+    left: 10%;
+    right: 10%;
+  }
+}
 body #user-info {
   margin: auto;
   width: 700px;
