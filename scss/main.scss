@@ -31,6 +31,12 @@ body {
                 color: #9d4e15;
                 margin-right: 10px;
               }
+              //Mobile version   
+              // @media only screen and (max-width: 600px) {
+              //   h2{
+              //     font-size: 40px;
+              //   }
+              // }
           }
 
           // elements right side
@@ -180,6 +186,12 @@ body {
         opacity: 0.6;
 
       }
+      //Mobile version   
+      @media only screen and (max-width: 600px) {
+        #register-background{
+          min-height: 300px; 
+        }
+      }
 
       // user-form
       #user-form {
@@ -250,6 +262,19 @@ body {
           }
 
       }
+      //Mobile version   
+      @media only screen and (max-width: 600px) {
+        #user-form{
+          top: 145px;
+          left: 5%;
+          right: 5%;
+          
+          h1{
+            font-size:28px;
+          }
+        }
+      }
+      
 
       // --------------------******-------------------
       // main field LOGIN PAGE

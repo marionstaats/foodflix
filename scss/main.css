@@ -142,6 +142,11 @@ body #register-background {
   background-position: center;
   opacity: 0.6;
 }
+@media only screen and (max-width: 600px) {
+  body #register-background {
+    min-height: 300px;
+  }
+}
 body #user-form {
   z-index: 1;
   position: absolute;
@@ -196,6 +201,16 @@ body #user-form #btn:hover {
 }
 body #user-form legend {
   font-size: 20px;
+}
+@media only screen and (max-width: 600px) {
+  body #user-form {
+    top: 145px;
+    left: 5%;
+    right: 5%;
+  }
+  body #user-form h1 {
+    font-size: 28px;
+  }
 }
 body #user-info {
   margin: auto;
