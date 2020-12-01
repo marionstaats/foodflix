@@ -1,11 +1,9 @@
 * {
   margin: 0;
   padding: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  font-family: 'Concert One', cursive;
+  box-sizing: border-box;
+  font-family: "Concert One", cursive;
 }
-
 * a {
   text-decoration: none;
 }
@@ -14,83 +12,54 @@ body {
   margin: 2em;
   text-align: center;
 }
-
 body #nav-bar {
   min-height: 3em;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: space-between;
 }
-
 body #nav-bar #user {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
 }
-
 body #nav-bar #user #user-register {
   margin-right: 40px;
 }
-
 body #nav-bar #user p {
   color: black;
 }
-
 body #nav-bar .fas {
   font-size: 40px;
   color: #9d4e15;
   margin: 7px;
 }
-
 body #nav-bar .fa-thumbs-up {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   font-size: 60px;
   color: #9d4e15;
 }
-
 body #search-bar {
   margin-top: 20px;
   margin-bottom: 50px;
   min-height: 450px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
   background-image: url("pexels-fauxels-3184192.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
 }
-
 body #search-bar h1 {
   color: white;
   font-size: 140px;
   text-shadow: 4px 4px black;
 }
-
 body #search-bar p {
   color: white;
   font-size: 50px;
   text-shadow: 3px 3px black;
 }
-
 body #search-bar #research {
   margin-top: 20px;
   margin-bottom: 10px;
@@ -98,11 +67,11 @@ body #search-bar #research {
   min-width: 300px;
   border-radius: 5px;
 }
-
 body #search-bar #submit {
   padding: 6px;
   border-radius: 5px;
   font-size: 25px;
   background-color: white;
 }
+
 /*# sourceMappingURL=main.css.map */
