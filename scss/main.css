@@ -180,11 +180,14 @@ body #user-form #gender {
   align-self: flex-start;
 }
 body #user-form #preferences {
-  display: grid;
-  grid-template-columns: auto auto;
-  gap: 5px;
-  text-align: left;
-  padding-left: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: auto;
+  width: 50%;
+}
+body #user-form #preferences #english, body #user-form #preferences #french {
+  align-self: center;
 }
 body #user-form #btn {
   background-color: #9d4e15;
@@ -204,7 +207,7 @@ body #user-form legend {
 }
 @media only screen and (max-width: 600px) {
   body #user-form {
-    top: 145px;
+    top: 135px;
     left: 5%;
     right: 5%;
   }

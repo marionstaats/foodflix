@@ -62,8 +62,15 @@
 
         <!-- Recipe preferences -->
         <fieldset >
-          <legend>Choose your recipe preferences:</legend><br>
+          <legend>Language preference:</legend><br>
             <div id="preferences">
+              <input type="radio" id="english" name="language" value="english" checked>
+              <label for="english">English</label>
+              <input type="radio" id="french" name="language" value="french">
+              <label for="french">French</label><br>
+            </div><br>
+
+            <!-- <div id="preferences">
               <div>
                 <input type="checkbox" id="drink" name="preference" value="drink">
                 <label for="drink"> Beverages</label><br>
@@ -88,7 +95,7 @@
                 <input type="checkbox" id="main-course" name="preference" value="main-course">
                 <label for="main-course"> Main courses</label><br><br>
               </div>
-            </div>
+            </div> -->
         </fieldset><br>
 
         <input type="submit" value="Create my account" id="btn" name="reg_user">

@@ -235,11 +235,18 @@ body {
           }
 
           #preferences {
-            display: grid;
-            grid-template-columns: auto auto;
-            gap: 5px;
-            text-align: left;
-            padding-left: 20px;
+            display: flex;
+            justify-content: center;
+            // grid-template-columns: auto auto;
+            gap: 10px;
+            // text-align: left;
+            // padding-left: 20px;
+            margin: auto;
+            width: 50%;
+
+            #english, #french{
+              align-self: center;
+            }
           }
 
           #btn {
@@ -265,7 +272,7 @@ body {
       //Mobile version   
       @media only screen and (max-width: 600px) {
         #user-form{
-          top: 145px;
+          top: 135px;
           left: 5%;
           right: 5%;
           
