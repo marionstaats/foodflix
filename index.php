@@ -75,9 +75,7 @@ if(isset($_POST['logout'])){ //logging out
         ?>
         </h3>
     </div>
-
     <?php endif //to finish if statement above ?>
-
 
     <!--javascript  -->
     <script src="javascript/index.js"></script>
