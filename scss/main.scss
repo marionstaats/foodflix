@@ -39,6 +39,11 @@ body {
 
             #user-register {
               margin-right: 40px;
+
+              // #logout{
+              //   border: none;
+              //   background: none;
+              // } 
             }
 
             p{
@@ -62,15 +67,23 @@ body {
           font-size: 60px;
           color: #9d4e15;
         }
-        
+        //Mobile version   
+        @media only screen and (max-width: 600px) {
+          .fa-thumbs-up::before{
+            font-size: 45px;
+          }
+          .fas::before{
+            font-size: 35px;
+          }
+        }
       }
       // --------------------******-------------------
-      // search-field HOME PAGE
+      // search-field HOME PAGE (index)
       #search-bar{
         // aligning
         margin-top: 20px;
         margin-bottom: 50px;
-        min-height: 450px;
+        min-height: 360px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -84,32 +97,68 @@ body {
         
 
         // elements
-          h1{
-            color: white;
-            font-size: 140px;
-            text-shadow: 4px 4px black;
-          }
+        h1{
+          color: white;
+          font-size: 130px;
+          text-shadow: 4px 4px black;
+          
+        }
+        p{
+          color: white;
+          font-size: 50px;
+          text-shadow: 3px 3px black;
+        }
+        #research{
+          margin-top: 20px;
+          margin-bottom: 10px;
+          padding: 6px;
+          min-width: 300px;
+          border-radius: 5px;
+          font-size: 20px;
+        }
 
-          p{
-            color: white;
-            font-size: 50px;
-            text-shadow: 3px 3px black;
+        #submit {
+          padding: 6px;
+          border-radius: 5px;
+          font-size: 25px;
+          background-color: white;
+        }
+        // Mobile Version
+        @media only screen and (max-width: 600px) {
+          h1 {
+            font-size:75px;
           }
-
-          #research{
-            margin-top: 20px;
-            margin-bottom: 10px;
-            padding: 6px;
-            min-width: 300px;
-            border-radius: 5px;
+          p {
+            font-size:35px;
           }
-
-          #submit {
-            padding: 6px;
-            border-radius: 5px;
-            font-size: 25px;
-            background-color: white;
+          #research {
+            font-size:15px;
           }
+        }
+      }
+      @media only screen and (max-width: 600px) {
+        #search-bar{
+          min-height: 300px;
+          margin-bottom: 20px;
+        }
+      }
+      //videos
+      .youtube{
+        width: 560px;
+        height: 315px;
+        margin-right:20px;
+      }
+      // Mobile Version
+      @media only screen and (max-width: 600px) {
+        iframe{
+          margin:auto;
+        }
+        .youtube{
+          width: 350px;
+          height: 200px;
+          margin-right: 0;
+          margin-bottom: 20px;
+        }
       }
       // --------------------******-------------------
       // main field REGISTER PAGE
@@ -251,6 +300,15 @@ body {
       }
 
 }
+
+@media only screen and (max-width: 600px) {
+  body{
+    margin-top: 5px;
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+}
+
 
 
 

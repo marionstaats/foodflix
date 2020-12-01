@@ -30,7 +30,7 @@
           </div>
           <div id="user-login">
             <form action="index.php" method="post">
-                    <button type="submit" name="logout"><a href="index.php"><i class="fas fa-sign-in-alt"></i><p>Log out</p></a></button>
+                    <button type="submit" name="logout" style="border:none; background:none"><a href="index.php"><i class="fas fa-sign-in-alt"></i><p>Log out</p></a></button>
                 </form>   
           </div>
       </div>
