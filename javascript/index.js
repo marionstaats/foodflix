@@ -12,11 +12,10 @@ document.getElementById("submit").addEventListener("click",()=>{
             iframe.setAttribute("width","560");
             iframe.setAttribute("height","315");
             iframe.setAttribute("frameborder","0");
-            iframe.setAttribute("style","margin-right:20px;")
+            iframe.setAttribute("style","margin-right:20px;");
             iframe.setAttribute("allow","accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture");
             iframe.setAttribute("allowfullscreen","");
             document.querySelector("body").insertAdjacentElement("beforeend", iframe);
-            // console.log(element.id.videoId);
         });
     })
 })

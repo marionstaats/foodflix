@@ -20,9 +20,9 @@ if(isset($_POST['logout'])){ //logging out
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Foodflix</title>
-    <link rel="icon" href="../scss/pan.png">
+    <link rel="icon" href="scss/pan.png">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link rel="stylesheet" href="../scss/main.css">
+    <link rel="stylesheet" href="scss/main.css">
     <link href="https://fonts.googleapis.com/css2?family=Concert+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
 </head>
@@ -86,6 +86,6 @@ if(isset($_POST['logout'])){ //logging out
     <?php endif ?>
 
     <!--javascript  -->
-    <script src="../javascript/index.js"></script>
+    <script src="/javascript/index.js"></script>
 </body>
 </html>
