@@ -30,7 +30,7 @@
           </div>
           <div id="user-login">
             <form action="index.php" method="post">
-                    <button type="submit" name="logout"><a href="index.php"><i class="fas fa-sign-in-alt"></i><p>Log out</p></a></button>
+                    <button type="submit" name="logout" style="border:none; background:none"><a href="index.php"><i class="fas fa-sign-in-alt"></i><p>Log out</p></a></button>
                 </form>   
           </div>
       </div>
@@ -41,9 +41,9 @@
       <div id="user-account">
         <img src="../scss/chef-women.png" alt="" id="avatar">
         <div id="greetings">
-          <h1>Hello, UserName!</h1>
+          <h1>Hello, <?php echo $_SESSION['username']?>!</h1>
           <div id="manage-profile">
-            <p id="email">Email: username@hotmail.com</p>
+            <p id="email">Email: <?php echo 'email'?></p>
             <p id="password">Password: ****</p>
 
             <a href="register.php">Manage your profile</a>

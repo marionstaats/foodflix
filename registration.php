@@ -25,11 +25,10 @@
                 <a href="login.php">
                     <i class="fas fa-user-circle"></i>
                     <p>Log in</p>
-                </a>
-                
+                </a>   
             </div>
         </div>
-    </div>
+      </div>
     
     <!-- main field -->
     <div id="register-background">
@@ -47,7 +46,7 @@
         
         <!-- Gender for avatar in user-account -->
         <div id="gender">
-          <input type="radio" id="male" name="gender" value="male">
+          <input type="radio" id="male" name="gender" value="male" checked>
           <label for="male">Man</label>
           <input type="radio" id="female" name="gender" value="female">
           <label for="female">Woman</label><br>

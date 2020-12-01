@@ -12,16 +12,19 @@ $errors = array();
 //connect to db
 // $db = mysqli_connect('sql210.epizy.com','epiz_27350002','rbxI8DLfu7M','epiz_27350002_foodflix') or die("could not connect to database"); //server, user, pw, database name
 $db = mysqli_connect('localhost','root','','foodflix') or die("could not connect to database"); //server, user, pw, database name
+
 //Registering users
 
 if(isset($_POST['reg_user'])){
 
+    //// Escape special characters, if any - returns string
     $username = mysqli_real_escape_string($db, $_POST['username']);
     $email = mysqli_real_escape_string($db, $_POST['email']);
     $password_1 = mysqli_real_escape_string($db, $_POST['password_1']);
     $password_2 = mysqli_real_escape_string($db, $_POST['password_2']);
+    $gender = mysqli_real_escape_string($db, $_POST['gender']);
 
-    //form validation
+    //form validation (also done in html so not needed?)
 
     if(empty($username)) {
         array_push($errors, "Username is required");
@@ -56,7 +59,7 @@ if(isset($_POST['reg_user'])){
 
     if (count($errors)== 0){
         $password = password_hash($password_1, PASSWORD_DEFAULT); //encrypt password
-        $query = "INSERT INTO user (username, email, password) VALUES ('$username', '$email', '$password')";
+        $query = "INSERT INTO user (username, email, password, gender) VALUES ('$username', '$email', '$password', '$gender')";
         
         mysqli_query($db,$query); //to run a query - first where? then what?
         $_SESSION['username'] = $username;

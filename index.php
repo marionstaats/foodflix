@@ -34,8 +34,8 @@ if(isset($_POST['logout'])){ //logging out
         <div id="user">
             <div id="user-register">
                 <form action="index.php" method="post">
-                    <button type="submit" name="logout"><a href="index.php"><i class="fas fa-sign-in-alt"></i><p>Log out</p></a></button>
-                </form>
+                    <button id="logout" type="submit" name="logout" style="border:none; background:none"><a href="index.php"><i class="fas fa-sign-in-alt"></i><p>Log out</p></a></button>
+                </form> 
 
             </div>
             <div id="user-login">
@@ -47,7 +47,13 @@ if(isset($_POST['logout'])){ //logging out
             </div>
         </div>
     </div>
-    
+    <!-- If user logs in print info about him -->
+
+    <?php
+        if(isset($_SESSION['username'])) : ?>
+        <h3>Welcome <?php echo $_SESSION['username']; ?></h3>
+    <?php endif ?>
+
     <!-- searcing field -->
     <div id="search-bar">
         <h1>FoodFlix</h1>
@@ -65,7 +71,6 @@ if(isset($_POST['logout'])){ //logging out
     <div>
         <h3>
         <?php
-        echo $_SESSION['success'];
         unset($_SESSION['success']);
         ?>
         </h3>
@@ -73,17 +78,6 @@ if(isset($_POST['logout'])){ //logging out
 
     <?php endif //to finish if statement above ?>
 
-    <!-- If user logs in print info about him -->
-
-    <?php
-    if(isset($_SESSION['username'])) : ?>
-    <h3>Welcome <?php echo $_SESSION['username']; ?></h3>
-
-    <form action="index.php" method="post">
-        <button type="submit" name="logout"><a href="index.php"></a>Logout</button>
-    </form>
-
-    <?php endif ?>
 
     <!--javascript  -->
     <script src="javascript/index.js"></script>
