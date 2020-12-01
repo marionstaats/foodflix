@@ -1,4 +1,36 @@
-<?php include('server.php'); ?>
+<?php require('server.php');
+  // check username using for logging
+  $user = $_SESSION['username'];
+
+  // get row from database
+  if($user) {
+    $query2 = "SELECT * FROM  user WHERE username='$user'";
+    $results = mysqli_query($db, $query2);
+    $userData = mysqli_fetch_assoc($results);
+    
+  };
+
+  // create vars for users
+  $userName = $userData['username'];
+  $userEmail = $userData['email'];
+  $userGender = $userData['gender'];
+  $userId = $userData['id'];
+  $userPrefs = $userData['preferences'];
+
+  // Deleting account
+	if(isset($_POST['delete'])){
+		// Get form data
+		$delete_id = mysqli_real_escape_string($db, $_POST['delete_id']);
+    $query = "DELETE FROM user WHERE id =" .$delete_id;
+    
+    if(mysqli_query($db, $query)){
+			header('Location: http://localhost/foodflix/php/login.php');
+		} else {
+			echo 'ERROR: '. mysqli_error($db);
+		}
+
+	}
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -39,14 +71,25 @@
     <div id="user-info">
       <!-- user account -->
       <div id="user-account">
+        <?php if ($userGender === 'female') :?>
         <img src="../scss/chef-women.png" alt="" id="avatar">
+        <? else : ?> 
+        <img src="../scss/chef-man.png" alt="" id="avatar">
+        <?php endif;?>
         <div id="greetings">
-          <h1>Hello, UserName!</h1>
+          <h1>Hello, <?php echo $userName; ?>!</h1>
           <div id="manage-profile">
-            <p id="email">Email: username@hotmail.com</p>
+            <p id="email">Email: <?php echo $userEmail; ?></p>
             <p id="password">Password: ****</p>
 
-            <a href="register.php">Manage your profile</a>
+            <a href="registration.php">Manage my profile</a>
+            <div class="input-btn">
+              <form method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+              <input type="hidden" name="delete_id" value="<?php echo $userData['id']; ?>">
+              <input type="submit" name="delete" value="Delete my account" style="background-color: #874312; padding: 5px; border: 1px solid white; border-radius: 8px; font-size: 15px">
+            </form>
+            </div>
+            
           </div>
         </div>
       </div>

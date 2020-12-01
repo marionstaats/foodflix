@@ -1,5 +1,4 @@
 <?php
-
 session_start();
 
 if(!isset($_SESSION['username'])){ //not logged in yet
@@ -47,16 +46,6 @@ if(isset($_POST['logout'])){ //logging out
             </div>
         </div>
     </div>
-    
-    <!-- searcing field -->
-    <div id="search-bar">
-        <h1>FoodFlix</h1>
-        <p>Find your best recipe</p>
-        <input type="text" id="research">
-        <input type="submit" id="submit" value="Find my recipe">
-    </div>
-
-    <!-- showroom -->
 
     <!-- php -->
     <?php
@@ -76,14 +65,22 @@ if(isset($_POST['logout'])){ //logging out
     <!-- If user logs in print info about him -->
 
     <?php
-    if(isset($_SESSION['username'])) : ?>
-    <h3>Welcome <?php echo $_SESSION['username']; ?></h3>
-
-    <form action="index.php" method="post">
-        <button type="submit" name="logout"><a href="index.php"></a>Logout</button>
-    </form>
+   
+    if(isset($_SESSION['username'])) : 
+    ?>
+    <h3 style="font-size: 3em;">Welcome <?php echo $_SESSION['username']; ?>!</h3>
 
     <?php endif ?>
+    
+    <!-- searching field -->
+    <div id="search-bar">
+        <h1>FoodFlix</h1>
+        <p>Find your best recipe</p>
+        <input type="text" id="research">
+        <input type="submit" id="submit" value="Find my recipe">
+    </div>
+
+    <!-- showroom -->
 
     <!--javascript  -->
     <script src="../javascript/index.js"></script>

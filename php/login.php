@@ -49,11 +49,11 @@
             <?php include('errors.php'); ?>
 
             <div>
-                <label for="username">Username : </label>
+                <label for="username">Username: </label>
                 <input type="text" name="username" required>
             </div>
             <div>
-                <label for="password">Password : </label>
+                <label for="password">Password: </label>
                 <input type="password" name="password" required>
             </div>
             <button type="submit" name="login_user"> Submit </button>
