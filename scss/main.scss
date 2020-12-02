@@ -12,6 +12,7 @@
 body {
   margin: 2em;
   text-align: center;
+  position: relative;
 
       // nav-bar
       #nav-bar{
@@ -20,12 +21,35 @@ body {
         display: flex;
         justify-content: space-between;
 
-        // elements
+          // elements left side
+          #logo {
+            display: flex;
+            align-items: center;
+
+              h2{
+                font-size: 60px;
+                color: #9d4e15;
+                margin-right: 10px;
+              }
+              //Mobile version   
+              // @media only screen and (max-width: 600px) {
+              //   h2{
+              //     font-size: 40px;
+              //   }
+              // }
+          }
+
+          // elements right side
           #user{
             display: flex;
 
             #user-register {
               margin-right: 40px;
+
+              // #logout{
+              //   border: none;
+              //   background: none;
+              // } 
             }
 
             p{
@@ -39,17 +63,116 @@ body {
           margin: 7px;
         }
 
+        .fas:hover {
+          color: #874312;
+        }
+
         .fa-thumbs-up{
           display: flex;
           align-items: center;
           font-size: 60px;
           color: #9d4e15;
         }
-        
+        //Mobile version   
+        @media only screen and (max-width: 600px) {
+          .fa-thumbs-up::before{
+            font-size: 45px;
+          }
+          .fas::before{
+            font-size: 35px;
+          }
+        }
+      }
+      h3{ //= php welcome message
+        font-size:25px;
       }
 
-      // search-field
+      // --------------------******-------------------
+      // search-field HOME PAGE (index)
       #search-bar{
+        // aligning
+        margin-top: 20px;
+        margin-bottom: 50px;
+        min-height: 360px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column; 
+
+        // background
+        background-image: url('pexels-fauxels-3184192.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        
+
+        // elements
+        h1{
+          color: white;
+          font-size: 130px;
+          text-shadow: 4px 4px black;
+          
+        }
+        p{
+          color: white;
+          font-size: 50px;
+          text-shadow: 3px 3px black;
+        }
+        #research{
+          margin-top: 20px;
+          margin-bottom: 10px;
+          padding: 6px;
+          min-width: 300px;
+          border-radius: 5px;
+          font-size: 20px;
+        }
+
+        #submit {
+          padding: 6px;
+          border-radius: 5px;
+          font-size: 25px;
+          background-color: white;
+        }
+        // Mobile Version
+        @media only screen and (max-width: 600px) {
+          h1 {
+            font-size:75px;
+          }
+          p {
+            font-size:35px;
+          }
+          #research {
+            font-size:15px;
+          }
+        }
+      }
+      @media only screen and (max-width: 600px) {
+        #search-bar{
+          min-height: 300px;
+          margin-bottom: 20px;
+        }
+      }
+      //videos
+      .youtube{
+        width: 560px;
+        height: 315px;
+        margin-right:20px;
+      }
+      // Mobile Version
+      @media only screen and (max-width: 600px) {
+        iframe{
+          margin:auto;
+        }
+        .youtube{
+          width: 350px;
+          height: 200px;
+          margin-right: 0;
+          margin-bottom: 20px;
+        }
+      }
+      // --------------------******-------------------
+      // main field REGISTER PAGE 
+      #register-background {
         // aligning
         margin-top: 20px;
         margin-bottom: 50px;
@@ -64,36 +187,252 @@ body {
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
+        opacity: 0.6;
 
-        // elements
-          h1{
-            color: white;
-            font-size: 140px;
-            text-shadow: 4px 4px black;
-          }
-
-          p{
-            color: white;
-            font-size: 50px;
-            text-shadow: 3px 3px black;
-          }
-
-          #research{
-            margin-top: 20px;
-            margin-bottom: 10px;
-            padding: 6px;
-            min-width: 300px;
-            border-radius: 5px;
-          }
-
-          #submit {
-            padding: 6px;
-            border-radius: 5px;
-            font-size: 25px;
-            background-color: white;
-          }
+      }
+      //Mobile version   
+      @media only screen and (max-width: 600px) {
+        #register-background{
+          min-height: 300px; 
+        }
       }
 
-      // showroom
+      // user-form
+      #user-form {
+        // positioning
+        z-index: 1;
+        position: absolute;
+        top: 40px;
+        left: 30%;
+        right: 30%;
+
+        // aligning
+        display: flex;
+        flex-direction: column;
+        
+        min-height: 600px;
+        background-color: white;
+        padding: 25px;
+        box-shadow: 3px 3px 6px rgb(112, 111, 111);
+        border-radius: 5px;
+        margin-bottom: 50px;
+
+          h1{
+            font-size: 40px;
+            margin-bottom: 15px;
+          }
+
+          input{
+            font-size: 20px;
+            padding: 5px;
+            border: 1px solid black;
+            border-radius: 5px;   
+          }
+
+          label{
+            font-size: 20px;
+            align-self: flex-start;
+          }
+
+          #gender {
+            align-self: flex-start;
+          }
+
+          #preferences {
+            display: flex;
+            justify-content: center;
+            // grid-template-columns: auto auto;
+            gap: 10px;
+            // text-align: left;
+            // padding-left: 20px;
+            margin: auto;
+            width: 50%;
+
+            #english, #french{
+              align-self: center;
+            }
+          }
+
+          #btn {
+            background-color: #9d4e15;
+            color: white;
+            font-size: 25px;
+            padding: 8px;
+            width: 300px;
+            align-self: center;
+            border: 1px solid white;
+            box-shadow: 1px 1px 3px rgb(112, 111, 111);
+          }
+
+          #btn:hover {
+            background-color: #874312;
+          }
+
+          legend {
+            font-size: 20px;
+          }
+
+      }
+      //Mobile version   
+      @media only screen and (max-width: 600px) {
+        #user-form{
+          top: 135px;
+          left: 5%;
+          right: 5%;
+          
+          h1{
+            font-size:28px;
+          }
+        }
+      }
+      
+      // -------------------******------------------
+      // Main field LOGIN PAGE
+      #login-background {
+        // aligning
+        margin-top: 20px;
+        margin-bottom: 50px;
+        min-height: 450px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column; 
+
+        // background
+        background-image: url('pexels-fauxels-3184192.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        opacity: 0.6;
+
+      }
+      //Mobile version   
+      @media only screen and (max-width: 600px) {
+        #login-background{
+          min-height: 490px; 
+        }
+      }
+
+      // user-form
+      #login-form {
+        // positioning
+        z-index: 1;
+        position: absolute;
+        top: 165px;
+        left: 30%;
+        right: 30%;
+
+        // aligning
+        display: flex;
+        flex-direction: column;
+        
+        min-height: 315px;
+        background-color: white;
+        padding: 25px;
+        box-shadow: 3px 3px 6px rgb(112, 111, 111);
+        border-radius: 5px;
+        margin-bottom: 50px;
+      
+          #login{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            div, button, p{
+              margin:10px;
+            }
+            button{
+              font-size: 25px;
+              padding: 20px;
+              border-radius: 50%;
+              padding-right: 40px;
+              padding-left: 40px;
+            }
+            p{
+              font-size: 25px;
+              margin-top: 30px;
+            }
+          }
+          input{
+            font-size: 20px;
+            padding: 5px;
+            border: 1px solid black;
+            border-radius: 5px;   
+          }
+
+          label{
+            font-size: 20px;
+            align-self: flex-start;
+          }
+      }
+      //Mobile version   
+      @media only screen and (max-width: 600px) {
+        #login-form{
+          left: 10%;
+          right: 10%; 
+        }
+      }
+      
+     
+      // --------------------******-------------------
+      // main field USER PAGE
+      #user-info {
+        margin: auto;
+        width: 700px;
+        border: 5px solid #9d4e15;
+        border-radius: 20px;
+
+        #user-account {
+          display: flex;
+          padding: 20px;
+
+            img {
+              width: 40%;
+            }
+
+            #greetings {
+              display: flex;
+              flex-direction: column;
+              
+              h1 {
+                font-size: 50px;
+              }
+
+              #manage-profile {
+                text-align: left;
+                font-size: 25px;
+                padding-top: 40px;
+                line-height: 50px;
+
+                a{
+                  background-color: #9d4e15;
+                  color: white;      
+                  padding: 5px;                  
+                  align-self: center;
+                  border: 1px solid white;
+                  border-radius: 8px;
+                  box-shadow: 1px 1px 3px rgb(112, 111, 111);
+                }
+
+                
+              }
+            }
+        }
+
+        h1{
+          font-size: 50px;
+        }
+      }
+
 }
+
+@media only screen and (max-width: 600px) {
+  body{
+    margin-top: 5px;
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+}
+
+
+
 
