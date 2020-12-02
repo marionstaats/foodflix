@@ -42,6 +42,7 @@ if(isset($_POST['reg_user'])){
     // check db for existing usernames
 
     $user_check_query = "SELECT * FROM user WHERE username = '$username' or email = '$email' LIMIT 1";
+    
 
     $result = mysqli_query($db, $user_check_query);
     $user = mysqli_fetch_assoc($result);
