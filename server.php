@@ -88,10 +88,8 @@ if(isset($_POST['login_user'])){//if button has been clicked on login page
 
     if(count($errors)==0){
         $query = "SELECT password FROM  user WHERE username='$username'";
-        $query2 = "SELECT * FROM  user WHERE username='$username'";
-        $results = mysqli_query($db, $query2);
 
-        if((mysqli_num_rows($results)) && (password_verify($password,mysqli_fetch_assoc(mysqli_query($db,$query))['password']))){ //if password and username match start session
+        if(password_verify($password,mysqli_fetch_assoc(mysqli_query($db,$query))['password'])){ //if password and username match start session
             $_SESSION['username'] = $username;
             $_SESSION['success'] = "Logged in successfully";
             header('location: index.php');
