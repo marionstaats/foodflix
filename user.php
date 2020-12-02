@@ -72,9 +72,9 @@
       <!-- user account -->
       <div id="user-account">
         <?php if ($userGender === 'female') :?>
-        <img src="../scss/chef-women.png" alt="" id="avatar">
+        <img src="./scss/chef-women.png" alt="" id="avatar">
         <? else : ?> 
-        <img src="../scss/chef-man.png" alt="" id="avatar">
+        <img src="./scss/chef-man.png" alt="" id="avatar">
         <?php endif;?>
         <div id="greetings">
           <h1>Hello, <?php echo $userName; ?>!</h1>
