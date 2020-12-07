@@ -95,8 +95,8 @@ if(isset($_GET['token']) && isset($_GET['id'])){
 
 if(isset($_POST['login_user'])){//if button has been clicked on login page
 
-    $username = mysqli_real_escape_string($db, $_POST['username']);
-    $password = mysqli_real_escape_string($db, $_POST['password']);
+    $username  = mysqli_real_escape_string($db, $_POST['username']);
+    $password  = mysqli_real_escape_string($db, $_POST['password']);
 
     if(empty($username)){
         array_push($errors, "Username is required");
@@ -107,8 +107,10 @@ if(isset($_POST['login_user'])){//if button has been clicked on login page
 
     if(count($errors)==0){
         $query = "SELECT password FROM  user WHERE username='$username'";
-
-        if(password_verify($password,mysqli_fetch_assoc(mysqli_query($db,$query))['password'])){ //if password and username match start session
+        $query2 = "SELECT confirmed FROM  user WHERE username='$username'";
+        if ((int)mysqli_fetch_assoc(mysqli_query($db,$query2))['confirmed'] === 0){
+            array_push($errors, "You need to confirm your email !");
+        }elseif(password_verify($password,mysqli_fetch_assoc(mysqli_query($db,$query))['password'])){ //if password and username match start session
             $_SESSION['username'] = $username;
             $_SESSION['success'] = "Logged in successfully";
             header('location: index.php');
