@@ -2,6 +2,11 @@
 
 session_start(); //checks when browser opens and 'remembers' session
 
+function str_random($length){
+    $char = "0123456789azertyuiopmlkjhgfdsqwxcvbnAZERTYUIOPMLKJHGFDSQWXCVBN";
+    return substr(str_shuffle(str_repeat($char,$length)),0,$length);
+}
+
 //initializing variables
 
 $username = "";
@@ -61,13 +66,17 @@ if(isset($_POST['reg_user'])){
     //Register user if no error
 
     if (count($errors)== 0){
+        $token = str_random(60);
         $password = password_hash($password_1, PASSWORD_DEFAULT); //encrypt password
-        $query = "INSERT INTO user (username, email, password, gender, preferences) VALUES ('$username', '$email', '$password', '$gender', '$preferences')";
+        $id = mysqli_fetch_assoc(mysqli_query($db,$query))['id'];
+        $query2 = "SELECT id FROM  user WHERE username='$username'";
+        $query = "INSERT INTO user (username, email, password, gender, preferences, confirmation_token, confirmed) VALUES ('$username', '$email', '$password', '$gender', '$preferences', $token', 'false')";
         
         mysqli_query($db,$query); //to run a query - first where? then what?
         $_SESSION['username'] = $username;
         $_SESSION['success'] = "You are now logged in";
 
+        mail($email, "Welcome at Foodflix, please confirm your subscription.", "To confirm your subscription please click on the link just below : \n\n http://localhost/foodflix/login.php?id=$id&token=$token");
         header('location: index.php');
     }
 }
