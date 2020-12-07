@@ -7,7 +7,7 @@
     $query2 = "SELECT * FROM  user WHERE username='$user'";
     $results = mysqli_query($db, $query2);
     $userData = mysqli_fetch_assoc($results);
-    
+    var_dump($userData);
   };
 
   // create vars for users
@@ -16,6 +16,7 @@
   $userGender = $userData['gender'];
   $userId = $userData['id'];
   $userPrefs = $userData['preferences'];
+  $userLang = $userData['language'];
 
   // Deleting account
 	if(isset($_POST['delete'])){
@@ -71,22 +72,34 @@
     <div id="user-info">
       <!-- user account -->
       <div id="user-account">
+        <!-- avatar: man or woman -->
         <?php if ($userGender === 'female') :?>
         <img src="./scss/chef-women.png" alt="" id="avatar">
         <? else : ?> 
         <img src="./scss/chef-man.png" alt="" id="avatar">
         <?php endif;?>
         <div id="greetings">
-          <h1>Hello, <?php echo $userName; ?>!</h1>
+          <div id="name-flag">
+          <!-- add name of user -->
+          <h1>Hello, <?php echo $userName; ?>! </h1>
+          <!-- add language of user -->
+          <?php if ($userLang === 'french') :?>
+            <img src="https://lipis.github.io/flag-icon-css/flags/4x3/fr.svg" alt="" style="height: 30%;">
+            <? else : ?> 
+            <img src="https://lipis.github.io/flag-icon-css/flags/4x3/gb.svg" alt="">
+          <?php endif;?>
+          </div>
           <div id="manage-profile">
+            <!-- add email of user -->
             <p id="email">Email: <?php echo $userEmail; ?></p>
             <p id="password">Password: ****</p>
 
             <a href="registration.php">Manage my profile</a>
+            <!-- delete btn -->
             <div class="input-btn">
               <form method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>">
               <input type="hidden" name="delete_id" value="<?php echo $userData['id']; ?>">
-              <input type="submit" name="delete" value="Delete my account" style="background-color: #874312; padding: 5px; border: 1px solid white; border-radius: 8px; font-size: 15px">
+              <input type="submit" name="delete" value="Delete my account" style="color: white; background-color: #874312; padding: 5px; border: 1px solid white; border-radius: 8px; font-size: 15px">
             </form>
             </div>
             
