@@ -11,6 +11,7 @@ if(isset($_POST['logout'])){ //logging out
     unset($_SESSION['username']);
     header("location: login.php");
 }
+
 ?>
 
 <!DOCTYPE html>

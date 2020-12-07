@@ -1,4 +1,12 @@
-<?php include('server.php'); ?>
+<?php 
+// if(isset($_GET['token']) && isset($_GET['id'])){
+//     $_SESSION['token'] = $_GET['token'];
+//     $_SESSION['id']    = $_GET['id'];
+// }
+include('server.php');     
+?>
+
+
 
 <!DOCTYPE html>
 <html lang="en">

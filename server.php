@@ -28,8 +28,8 @@ if(isset($_POST['reg_user'])){
     $password_1 = mysqli_real_escape_string($db, $_POST['password_1']);
     $password_2 = mysqli_real_escape_string($db, $_POST['password_2']);
     $gender = mysqli_real_escape_string($db, $_POST['gender']);
-    foreach ($_POST['preference'] as $onePref)
-        $preferences[] = mysqli_real_escape_string($db, $onePref);
+    // foreach ($_POST['preference'] as $onePref)
+    //     $preferences[] = mysqli_real_escape_string($db, $onePref);
 
     //form validation (also done in html so not needed?)
 
@@ -68,18 +68,28 @@ if(isset($_POST['reg_user'])){
     if (count($errors)== 0){
         $token = str_random(60);
         $password = password_hash($password_1, PASSWORD_DEFAULT); //encrypt password
-        $id = mysqli_fetch_assoc(mysqli_query($db,$query))['id'];
+        $query = "INSERT INTO user (username, email, password, gender, confirmation_token) VALUES ('$username', '$email', '$password', '$gender', '$token')";
         $query2 = "SELECT id FROM  user WHERE username='$username'";
-        $query = "INSERT INTO user (username, email, password, gender, preferences, confirmation_token, confirmed) VALUES ('$username', '$email', '$password', '$gender', '$preferences', $token', 'false')";
+        $id = mysqli_fetch_assoc(mysqli_query($db,$query2))['id'];
         
         mysqli_query($db,$query); //to run a query - first where? then what?
         $_SESSION['username'] = $username;
         $_SESSION['success'] = "You are now logged in";
-
         mail($email, "Welcome at Foodflix, please confirm your subscription.", "To confirm your subscription please click on the link just below : \n\n http://localhost/foodflix/login.php?id=$id&token=$token");
-        header('location: index.php');
+        header('location: login.php');
     }
 }
+// Confirmation email sent waiting for confirmation
+
+if(isset($_GET['token']) && isset($_GET['id'])){        
+    $id_confirmation = $_GET['id'];
+    $query3 = "SELECT confirmation_token FROM  user WHERE id='$id_confirmation'";
+    $token_confirmed = mysqli_fetch_assoc(mysqli_query($db,$query3))['confirmation_token'];
+    if($token_confirmed === $_GET['token']){
+        $query4 = "UPDATE user SET confirmed = 1 WHERE id='$id_confirmation'";
+        mysqli_query($db,$query4); 
+    }
+}  
 
 //Login user
 
