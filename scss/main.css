@@ -334,4 +334,17 @@ body #user-info h1 {
   }
 }
 
+.message{
+  animation-name: message;
+  animation-duration: 5s;
+}
+
+@keyframes message {
+  from{
+    opacity: 1;
+  }
+  to{
+    opacity: 0;
+  }
+}
 /*# sourceMappingURL=main.css.map */

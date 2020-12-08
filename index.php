@@ -67,17 +67,22 @@ if(isset($_POST['logout'])){ //logging out
 
     <!-- php -->
     <?php
-    if(isset($_SESSION['success'])) : //shows below only if successful login?> 
-
-    <div>
-        <h3>
-        <?php
-        unset($_SESSION['success']);
-        ?>
+    if(isset($_SESSION['success'])) : //shows below only if successful login?>     
+    <div class='messageContainer'>
+        <h3 class="message">
+            <?php
+                echo $_SESSION['success'];
+                unset($_SESSION['success']); 
+            ?>
         </h3>
     </div>
     <?php endif //to finish if statement above ?>
 
     <script src="javascript/index.js"></script>
+    <script>
+        setTimeout(()=>{
+            document.querySelector(".messageContainer").setAttribute("style", "display:none");
+        },5000)
+    </script>
 </body>
 </html>
