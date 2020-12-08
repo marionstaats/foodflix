@@ -83,11 +83,18 @@ if(isset($_POST['reg_user'])){
 
 if(isset($_GET['token']) && isset($_GET['id'])){        
     $id_confirmation = $_GET['id'];
+    $query5 = "SELECT confirmed FROM  user WHERE id='$id_confirmation'";
+    $verify_already_confirmed = mysqli_fetch_assoc(mysqli_query($db,$query5))['confirmed'];
     $query3 = "SELECT confirmation_token FROM  user WHERE id='$id_confirmation'";
     $token_confirmed = mysqli_fetch_assoc(mysqli_query($db,$query3))['confirmation_token'];
-    if($token_confirmed === $_GET['token']){
+    if ($verify_already_confirmed === '1'){
+        array_push($errors, "You've already confirmed your email !"); 
+    }elseif($token_confirmed === $_GET['token']){
         $query4 = "UPDATE user SET confirmed = 1 WHERE id='$id_confirmation'";
-        mysqli_query($db,$query4); 
+        mysqli_query($db,$query4);
+        $_SESSION['username'] = $username;
+        $_SESSION['success'] = "Logged in successfully";
+        header('location: index.php'); 
     }
 } 
 
