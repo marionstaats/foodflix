@@ -48,7 +48,11 @@ include('server.php');
             </div>
             <button type="submit" name="login_user"> Login </button>
 
+            <!-- Not a user yet - go to registration -->
             <p>Not a user? <a href="registration.php">Register here</a></p>
+
+            <!-- Forgot password -->
+            <p>Forgot password? <a href="emailpw.php">New password here</a></p>
 
         </form>
     </div>

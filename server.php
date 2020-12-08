@@ -89,7 +89,31 @@ if(isset($_GET['token']) && isset($_GET['id'])){
         $query4 = "UPDATE user SET confirmed = 1 WHERE id='$id_confirmation'";
         mysqli_query($db,$query4); 
     }
-}  
+} 
+
+//Forgotten password
+//Send email with link to forgotten password
+if(isset($_POST['mail_pw'])){
+    $email = $_POST['username_pw'];
+    $token = str_random(60);
+
+    mail($email, "Welcome at Foodflix, please change your password.", "To change your password please click on the link just below : \n\n http://localhost/foodflix/passwordchange.php?email=$email&token=$token");
+}
+
+//Change password page after email forgotten pw
+if(isset($_POST['forgot_pw'])){
+    $email_confirmation = $_GET['email'];
+    $query = "SELECT token FROM user WHERE email='$email_confirmation'";
+    $token = mysqli_fetch_assoc(mysqli_query($db,$query))['token'];
+
+    if($token === $_GET['token']){
+        $password_new_1 = password_hash($password_new_1, PASSWORD_DEFAULT); //encrypt password
+        $queryPW = "UPDATE user SET password='$password_new_1' WHERE email='$email_confirmation'";
+        mysqli_query($db,$queryPW);
+        header('location: login.php');        
+    }
+}
+
 
 //Login user
 
