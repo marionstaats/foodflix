@@ -28,13 +28,7 @@ if(isset($_POST['reg_user'])){
     $password_1 = mysqli_real_escape_string($db, $_POST['password_1']);
     $password_2 = mysqli_real_escape_string($db, $_POST['password_2']);
     $gender = mysqli_real_escape_string($db, $_POST['gender']);
-    
     $language = mysqli_real_escape_string($db, $_POST['language']);
-    var_dump($_POST['preference']);
-
-    // foreach ($_POST['preference'] as $onePref)
-    //     $preferences[] = mysqli_real_escape_string($db, $onePref);
-
 
     //form validation (also done in html so not needed?)
 
@@ -73,13 +67,9 @@ if(isset($_POST['reg_user'])){
     if (count($errors)== 0){
         $token = str_random(60);
         $password = password_hash($password_1, PASSWORD_DEFAULT); //encrypt password
-<<<<<<< HEAD
-        $query = "INSERT INTO user (username, email, password, gender, preferences, language) VALUES ('$username', '$email', '$password', '$gender', '$preferences', '$language')";
-=======
-        $query = "INSERT INTO user (username, email, password, gender, confirmation_token) VALUES ('$username', '$email', '$password', '$gender', '$token')";
+        $query = "INSERT INTO user (username, email, password, gender, language, confirmation_token) VALUES ('$username', '$email', '$password', '$gender', '$language', '$token')";
         $query2 = "SELECT id FROM  user WHERE username='$username'";
         $id = mysqli_fetch_assoc(mysqli_query($db,$query2))['id'];
->>>>>>> main
         
         mysqli_query($db,$query); //to run a query - first where? then what?
         $_SESSION['username'] = $username;
@@ -92,11 +82,19 @@ if(isset($_POST['reg_user'])){
 
 if(isset($_GET['token']) && isset($_GET['id'])){        
     $id_confirmation = $_GET['id'];
+    $query5 = "SELECT confirmed FROM user WHERE id='$id_confirmation'";
+    $verify_already_confirmed = mysqli_fetch_assoc(mysqli_query($db,$query5))['confirmed'];
     $query3 = "SELECT confirmation_token FROM  user WHERE id='$id_confirmation'";
     $token_confirmed = mysqli_fetch_assoc(mysqli_query($db,$query3))['confirmation_token'];
-    if($token_confirmed === $_GET['token']){
+    
+    if ($verify_already_confirmed === '1') {
+        array_push($errors, 'You\'ve already confirmed your email!');
+    } elseif($token_confirmed === $_GET['token']) {
         $query4 = "UPDATE user SET confirmed = 1 WHERE id='$id_confirmation'";
-        mysqli_query($db,$query4); 
+        mysqli_query($db,$query4);
+        $_SESSION['username'] = $username;
+        $_SESSION['success'] = "Logged in successfully";
+        header('location: index.php'); 
     }
 }  
 

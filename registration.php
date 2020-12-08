@@ -42,7 +42,7 @@
         <h1>Welcome to FoodFlix!</h1>
         <!-- Username -->
         <label for="username">Username:</label>
-        <input type="text" id="username" name="username" required><br>
+        <input type="text" id="username" name="username" required autocomplete="username"><br>
         
         <!-- Gender for avatar in user-account -->
         <div id="gender">
@@ -56,9 +56,9 @@
         <label for="email">Email:</label>
         <input type="email" id="email" name="email" required><br>
         <label for="password_1">Password:</label>
-        <input type="password" id="password_1" name="password_1" required><br>
+        <input type="password" id="password_1" name="password_1" required autocomplete="new-password"><br>
         <label for="password_2">Confirm password:</label>
-        <input type="password" id="password_2" name="password_2" required><br><br>
+        <input type="password" id="password_2" name="password_2" required autocomplete="new-password"><br><br>
 
         <!-- Recipe preferences -->
         <fieldset >

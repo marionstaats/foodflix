@@ -4,10 +4,10 @@
 
   // get row from database
   if($user) {
+    // get data from table User
     $query2 = "SELECT * FROM  user WHERE username='$user'";
     $results = mysqli_query($db, $query2);
     $userData = mysqli_fetch_assoc($results);
-    var_dump($userData);
   };
 
   // create vars for users
@@ -25,12 +25,26 @@
     $query = "DELETE FROM user WHERE id =" .$delete_id;
     
     if(mysqli_query($db, $query)){
-			header('Location: http://localhost/foodflix/php/login.php');
+			header('Location: http://localhost/foodflix/login.php');
 		} else {
 			echo 'ERROR: '. mysqli_error($db);
 		}
 
-	}
+  }
+  
+  // Get video which user saved in account
+
+  if(isset($_POST['save-video'])){
+    // Get data from save-btn
+    $video_link = mysqli_real_escape_string($db, $_POST['data']);
+    $query = "INSERT INTO videos (link, date, idUser) VALUES ('$video_link', now(), '$userId')";
+  }
+  
+  if($userId) {
+    // get data from videos table
+    $queryUserVideo = "SELECT * FROM videos WHERE idUser='$userId' ORDER BY date DESC";
+    $resultUserVideo = mysqli_query($db, $queryUserVideo);
+  }
 ?>
 
 <!DOCTYPE html>
@@ -109,9 +123,18 @@
 
       <!-- favorite videos -->
       <h1>My favorite video:</h1>
-      <div>
-        <br><br><br>
-      </div>
+      <br>
+      <?php
+        while ($row = mysqli_fetch_assoc($resultUserVideo)) {
+          printf ("%s \n", $row["date"]);
+          ?>
+          <div>
+            <iframe class="youtube" src="<?php echo($row["link"])?>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+            <br><br>
+          </div>
+          <?php
+      }
+      ?>  
     </div>
 
 </body>
