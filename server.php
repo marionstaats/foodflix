@@ -99,7 +99,7 @@ if(isset($_GET['token']) && isset($_GET['id'])){
 } 
 
 //Forgotten password
-//Send email with link to forgotten password
+//Send email with link to change password
 if(isset($_POST['mail_pw'])){
     $email = $_POST['username_pw'];
     $token = str_random(60);

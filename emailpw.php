@@ -41,7 +41,7 @@
         <h1>Receive an email to change your password</h1>
         <!-- User name -->
         <label for="username_pw">Email:</label>
-        <input type="text" id="username_pw" name="username_pw" required><br>
+        <input type="email" id="username_pw" name="username_pw" required><br>
 
         <input type="submit" value="Get email" id="btn" name="mail_pw">
     </form>    
