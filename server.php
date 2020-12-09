@@ -31,16 +31,16 @@ if(isset($_POST['reg_user'])){
     // foreach ($_POST['preference'] as $onePref)
     //     $preferences[] = mysqli_real_escape_string($db, $onePref);
 
-    //form validation (also done in html so not needed?)
+    //form validation 
 
     if(empty($username)) {
-        array_push($errors, "Username is required");
+        array_push($errors, "Username is required"); //(also done in html so not needed?)
     };
     if(empty($email)) {
-        array_push($errors, "Email is required");
+        array_push($errors, "Email is required"); //(also done in html so not needed?)
     };
     if(empty($password_1)) {
-        array_push($errors, "Password is required");
+        array_push($errors, "Password is required"); //(also done in html so not needed?)
     };
     if($password_1 != $password_2){
         array_push($errors, "Passwords need to be the same");
@@ -96,7 +96,7 @@ if(isset($_GET['token']) && isset($_GET['id'])){
         $_SESSION['success'] = "Logged in successfully";
         header('location: index.php'); 
     }
-} 
+}  
 
 //Forgotten password
 //Send email with link to change password
