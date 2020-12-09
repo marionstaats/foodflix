@@ -31,15 +31,6 @@ if(isset($_POST['reg_user'])){
 
     //form validation 
 
-    if(empty($username)) {
-        array_push($errors, "Username is required"); //(also done in html so not needed?)
-    };
-    if(empty($email)) {
-        array_push($errors, "Email is required"); //(also done in html so not needed?)
-    };
-    if(empty($password_1)) {
-        array_push($errors, "Password is required"); //(also done in html so not needed?)
-    };
     if($password_1 != $password_2){
         array_push($errors, "Passwords need to be the same");
     };
@@ -67,12 +58,14 @@ if(isset($_POST['reg_user'])){
         $token = str_random(60);
         $password = password_hash($password_1, PASSWORD_DEFAULT); //encrypt password
         $query = "INSERT INTO user (username, email, password, gender, language, confirmation_token) VALUES ('$username', '$email', '$password', '$gender', '$language', '$token')";
-        $query2 = "SELECT id FROM  user WHERE username='$username'";
-        $id = mysqli_fetch_assoc(mysqli_query($db,$query2))['id'];
-        
         mysqli_query($db,$query); //to run a query - first where? then what?
+
+        $query2 = "SELECT id FROM user WHERE username='$username'";
+        $id = mysqli_fetch_assoc(mysqli_query($db,$query2))['id'];
+
         $_SESSION['username'] = $username;
         $_SESSION['success'] = "You are now logged in";
+
         mail($email, "Welcome at Foodflix, please confirm your subscription.", "To confirm your subscription please click on the link just below : \n\n http://localhost/foodflix/login.php?id=$id&token=$token");
         header('location: login.php');
     }
