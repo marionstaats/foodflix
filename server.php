@@ -124,6 +124,6 @@ if(isset($_POST['login_user'])){//if button has been clicked on login page
         } else {
             array_push($errors, "Wrong username/password combination. Please try again.");
         }
-    }
+    }    
 }
 ?>
