@@ -42,7 +42,7 @@
         <h1>Welcome to FoodFlix!</h1>
         <!-- Username -->
         <label for="username">Username:</label>
-        <input type="text" id="username" name="username" required><br>
+        <input type="text" id="username" name="username" required autocomplete="username"><br>
         
         <!-- Gender for avatar in user-account -->
         <div id="gender">
@@ -56,21 +56,24 @@
         <label for="email">Email:</label>
         <input type="email" id="email" name="email" required><br>
         <label for="password_1">Password:</label>
-        <input type="password" id="password_1" name="password_1" required><br>
+        <input type="password" id="password_1" name="password_1" required autocomplete="new-password"><br>
         <label for="password_2">Confirm password:</label>
-        <input type="password" id="password_2" name="password_2" required><br><br>
+        <input type="password" id="password_2" name="password_2" required autocomplete="new-password"><br><br>
 
         <!-- Recipe preferences -->
         <fieldset >
           <legend>Language preference:</legend><br>
-            <div id="preferences">
+            <div class="preferences">
               <input type="radio" id="english" name="language" value="english" checked>
               <label for="english">English</label>
               <input type="radio" id="french" name="language" value="french">
               <label for="french">French</label><br>
             </div><br>
+        </fieldset> <br><br>
 
-            <!-- <div id="preferences">
+        <fieldset >
+          <legend>Cooking preference:</legend><br>
+            <div class="preferences">
               <div>
                 <input type="checkbox" id="drink" name="preference[]" value="drink">
                 <label for="drink"> Beverages</label><br>
@@ -95,7 +98,7 @@
                 <input type="checkbox" id="main-course" name="preference" value="main-course">
                 <label for="main-course"> Main courses</label><br><br>
               </div>
-            </div> -->
+            </div>
         </fieldset><br>
 
         <input type="submit" value="Create my account" id="btn" name="reg_user">
@@ -106,4 +109,5 @@
     
     
 </body>
+
 </html>
