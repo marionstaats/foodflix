@@ -15,7 +15,6 @@
   $userEmail = $userData['email'];
   $userGender = $userData['gender'];
   $userId = $userData['id'];
-  $userPrefs = $userData['preferences'];
   $userLang = $userData['language'];
 
   // Deleting account

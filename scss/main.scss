@@ -376,6 +376,7 @@ body {
       // --------------------******-------------------
       // main field USER PAGE
       #user-info {
+
         margin: auto;
         width: 700px;
         border: 5px solid #9d4e15;
@@ -421,6 +422,8 @@ body {
         h1{
           font-size: 50px;
         }
+
+        
       }
 
 }
@@ -430,6 +433,39 @@ body {
     margin-top: 5px;
     margin-right: 10px;
     margin-left: 10px;
+    // for user-page
+    #user-info {
+      width: 350px;
+      margin: 20px;
+
+      #user-account {
+        display: flex;
+        flex-direction: column;
+
+        img {
+          height: 140px;
+        }
+
+        h1 {
+          font-size: 30px;
+        }
+
+        #greetings {
+          #manage-profile {
+          padding-top: 5px;
+        }
+      }
+      }
+
+      h1{
+        font-size: 40px;
+      }
+
+      iframe {
+        width: 320px;
+      }
+
+    }
   }
 }
 
