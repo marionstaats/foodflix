@@ -38,11 +38,17 @@
     // Get data from save-btn
     $video_link = mysqli_real_escape_string($db, $_POST['data']);
     $query = "INSERT INTO videos (link, date, idUser) VALUES ('$video_link', now(), '$userId')";
+
+    if(mysqli_query($db, $query)){
+			header('Location: http://localhost/foodflix/user.php');
+		} else {
+			echo 'ERROR: '. mysqli_error($db);
+		}
   }
   
   if($userId) {
     // get data from videos table
-    $queryUserVideo = "SELECT * FROM videos WHERE idUser='$userId' ORDER BY date DESC";
+    $queryUserVideo = "SELECT * FROM videos WHERE idUser='$userId' GROUP BY link ORDER BY date DESC";
     $resultUserVideo = mysqli_query($db, $queryUserVideo);
   }
 ?>
@@ -88,9 +94,9 @@
       <div id="user-account">
         <!-- avatar: man or woman -->
         <?php if ($userGender === 'female') :?>
-        <img src="./scss/chef-women.png" alt="" id="avatar">
+        <img src="./scss/chef-women.png" alt="" id="avatar" height="280px">
         <? else : ?> 
-        <img src="./scss/chef-man.png" alt="" id="avatar">
+        <img src="./scss/chef-man.png" alt="" id="avatar" height="280px">
         <?php endif;?>
         <div id="greetings">
           <div id="name-flag">
@@ -98,7 +104,7 @@
           <h1>Hello, <?php echo $userName; ?>! </h1>
           <!-- add language of user -->
           <?php if ($userLang === 'french') :?>
-            <img src="https://lipis.github.io/flag-icon-css/flags/4x3/fr.svg" alt="" style="height: 30%;">
+            <img src="https://lipis.github.io/flag-icon-css/flags/4x3/fr.svg" alt="">
             <? else : ?> 
             <img src="https://lipis.github.io/flag-icon-css/flags/4x3/gb.svg" alt="">
           <?php endif;?>
