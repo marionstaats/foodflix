@@ -15,7 +15,6 @@
   $userEmail = $userData['email'];
   $userGender = $userData['gender'];
   $userId = $userData['id'];
-  $userPrefs = $userData['preferences'];
   $userLang = $userData['language'];
 
   // Deleting account
@@ -95,7 +94,7 @@
         <!-- avatar: man or woman -->
         <?php if ($userGender === 'female') :?>
         <img src="./scss/chef-women.png" alt="" id="avatar" height="280px">
-        <? else : ?> 
+        <?php else : ?> 
         <img src="./scss/chef-man.png" alt="" id="avatar" height="280px">
         <?php endif;?>
         <div id="greetings">
@@ -105,7 +104,7 @@
           <!-- add language of user -->
           <?php if ($userLang === 'french') :?>
             <img src="https://lipis.github.io/flag-icon-css/flags/4x3/fr.svg" alt="">
-            <? else : ?> 
+            <?php else : ?> 
             <img src="https://lipis.github.io/flag-icon-css/flags/4x3/gb.svg" alt="">
           <?php endif;?>
           </div>
