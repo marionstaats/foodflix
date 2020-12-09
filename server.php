@@ -12,13 +12,12 @@ function str_random($length){
 $username = "";
 $email = "";
 $gender = "";
-$preferences = [];
 
 $errors = array();
 
 //connect to db
 // $db = mysqli_connect('sql210.epizy.com','epiz_27350002','rbxI8DLfu7M','epiz_27350002_foodflix') or die("could not connect to database"); //server, user, pw, database name
-$db = mysqli_connect('localhost','root','root','foodflix') or die("could not connect to database"); //server, user, pw, database name
+$db = mysqli_connect('localhost','root','','foodflix') or die("could not connect to database"); //server, user, pw, database name
 
 //Registering users
 
@@ -86,7 +85,7 @@ if(isset($_GET['token']) && isset($_GET['id'])){
     $verify_already_confirmed = mysqli_fetch_assoc(mysqli_query($db,$query5))['confirmed'];
     $query3 = "SELECT confirmation_token FROM  user WHERE id='$id_confirmation'";
     $token_confirmed = mysqli_fetch_assoc(mysqli_query($db,$query3))['confirmation_token'];
-    
+        
     if ($verify_already_confirmed === '1') {
         array_push($errors, 'You\'ve already confirmed your email!');
     } elseif($token_confirmed === $_GET['token']) {

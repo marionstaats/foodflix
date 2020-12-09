@@ -1,11 +1,10 @@
+
 * {
   margin: 0;
   padding: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  font-family: 'Concert One', cursive;
+  box-sizing: border-box;
+  font-family: "Concert One", cursive;
 }
-
 * a {
   text-decoration: none;
 }
@@ -15,67 +14,43 @@ body {
   text-align: center;
   position: relative;
 }
-
 body #nav-bar {
   min-height: 3em;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: space-between;
 }
-
 body #nav-bar #logo {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
 }
-
 body #nav-bar #logo h2 {
   font-size: 60px;
   color: #9d4e15;
   margin-right: 10px;
 }
-
 body #nav-bar #user {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
 }
-
 body #nav-bar #user #user-register {
   margin-right: 40px;
 }
-
 body #nav-bar #user p {
   color: black;
 }
-
 body #nav-bar .fas {
   font-size: 40px;
   color: #9d4e15;
   margin: 7px;
 }
-
 body #nav-bar .fas:hover {
   color: #874312;
 }
-
 body #nav-bar .fa-thumbs-up {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   font-size: 60px;
   color: #9d4e15;
 }
-
 @media only screen and (max-width: 600px) {
   body #nav-bar .fa-thumbs-up::before {
     font-size: 45px;
@@ -84,46 +59,32 @@ body #nav-bar .fa-thumbs-up {
     font-size: 35px;
   }
 }
-
 body h3 {
   font-size: 25px;
 }
-
 body #search-bar {
   margin-top: 20px;
   margin-bottom: 50px;
   min-height: 360px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
   background-image: url("pexels-fauxels-3184192.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
 }
-
 body #search-bar h1 {
   color: white;
   font-size: 130px;
   text-shadow: 4px 4px black;
 }
-
 body #search-bar p {
   color: white;
   font-size: 50px;
   text-shadow: 3px 3px black;
 }
-
 body #search-bar #research {
   margin-top: 20px;
   margin-bottom: 10px;
@@ -132,14 +93,12 @@ body #search-bar #research {
   border-radius: 5px;
   font-size: 20px;
 }
-
 body #search-bar #submit {
   padding: 6px;
   border-radius: 5px;
   font-size: 25px;
   background-color: white;
 }
-
 @media only screen and (max-width: 600px) {
   body #search-bar h1 {
     font-size: 75px;
@@ -151,20 +110,17 @@ body #search-bar #submit {
     font-size: 15px;
   }
 }
-
 @media only screen and (max-width: 600px) {
   body #search-bar {
     min-height: 300px;
     margin-bottom: 20px;
   }
 }
-
 body .youtube {
   width: 560px;
   height: 315px;
   margin-right: 20px;
 }
-
 @media only screen and (max-width: 600px) {
   body iframe {
     margin: auto;
@@ -176,125 +132,83 @@ body .youtube {
     margin-bottom: 20px;
   }
 }
-
 body #register-background {
   margin-top: 20px;
   margin-bottom: 50px;
   min-height: 450px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
   background-image: url("pexels-fauxels-3184192.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   opacity: 0.6;
 }
-
 @media only screen and (max-width: 600px) {
   body #register-background {
     min-height: 300px;
   }
 }
-
 body #user-form {
   z-index: 1;
   position: absolute;
   top: 40px;
   left: 30%;
   right: 30%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   min-height: 600px;
   background-color: white;
   padding: 25px;
-  -webkit-box-shadow: 3px 3px 6px #706f6f;
-          box-shadow: 3px 3px 6px #706f6f;
+  box-shadow: 3px 3px 6px #706f6f;
   border-radius: 5px;
   margin-bottom: 50px;
 }
-
 body #user-form h1 {
   font-size: 40px;
   margin-bottom: 15px;
 }
-
 body #user-form input {
   font-size: 20px;
   padding: 5px;
   border: 1px solid black;
   border-radius: 5px;
 }
-
 body #user-form label {
   font-size: 20px;
-  -ms-flex-item-align: start;
-      align-self: flex-start;
+  align-self: flex-start;
 }
-
 body #user-form #gender {
-  -ms-flex-item-align: start;
-      align-self: flex-start;
+  align-self: flex-start;
 }
-
-body #user-form .preferences {
-  display: -ms-grid;
-  display: grid;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -ms-grid-columns: auto auto;
-      grid-template-columns: auto auto;
+body #user-form #preferences {
+  display: flex;
+  justify-content: center;
   gap: 10px;
-  text-align: left;
-  padding-left: 20px;
   margin: auto;
   width: 50%;
 }
-
-body #user-form .preferences #english, body #user-form .preferences #french {
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
+body #user-form #preferences #english, body #user-form #preferences #french {
+  align-self: center;
 }
-
 body #user-form #btn {
   background-color: #9d4e15;
   color: white;
   font-size: 25px;
   padding: 8px;
   width: 300px;
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
+  align-self: center;
   border: 1px solid white;
-  -webkit-box-shadow: 1px 1px 3px #706f6f;
-          box-shadow: 1px 1px 3px #706f6f;
+  box-shadow: 1px 1px 3px #706f6f;
 }
-
 body #user-form #btn:hover {
   background-color: #874312;
 }
-
 body #user-form legend {
   font-size: 20px;
 }
-
 @media only screen and (max-width: 600px) {
   body #user-form {
     top: 135px;
@@ -305,76 +219,48 @@ body #user-form legend {
     font-size: 28px;
   }
 }
-
 body #login-background {
   margin-top: 20px;
   margin-bottom: 50px;
   min-height: 450px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
   background-image: url("pexels-fauxels-3184192.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   opacity: 0.6;
 }
-
 @media only screen and (max-width: 600px) {
   body #login-background {
     min-height: 490px;
   }
 }
-
 body #login-form {
   z-index: 1;
   position: absolute;
   top: 165px;
   left: 30%;
   right: 30%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   min-height: 315px;
   background-color: white;
   padding: 25px;
-  -webkit-box-shadow: 3px 3px 6px #706f6f;
-          box-shadow: 3px 3px 6px #706f6f;
+  box-shadow: 3px 3px 6px #706f6f;
   border-radius: 5px;
   margin-bottom: 50px;
 }
-
 body #login-form #login {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
+  align-items: center;
 }
-
 body #login-form #login div, body #login-form #login button, body #login-form #login p {
   margin: 10px;
 }
-
 body #login-form #login button {
   font-size: 25px;
   padding: 20px;
@@ -382,90 +268,61 @@ body #login-form #login button {
   padding-right: 40px;
   padding-left: 40px;
 }
-
 body #login-form #login p {
   font-size: 25px;
   margin-top: 30px;
 }
-
 body #login-form input {
   font-size: 20px;
   padding: 5px;
   border: 1px solid black;
   border-radius: 5px;
 }
-
 body #login-form label {
   font-size: 20px;
-  -ms-flex-item-align: start;
-      align-self: flex-start;
+  align-self: flex-start;
 }
-
 @media only screen and (max-width: 600px) {
   body #login-form {
     left: 10%;
     right: 10%;
   }
 }
-
 body #user-info {
   margin: auto;
   width: 700px;
   border: 5px solid #9d4e15;
   border-radius: 20px;
 }
-
 body #user-info #user-account {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   padding: 20px;
 }
-
 body #user-info #user-account img {
   width: 40%;
 }
-
 body #user-info #user-account #greetings {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
 }
-
-body #user-info #user-account #greetings #name-flag {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-body #user-info #user-account #greetings #name-flag h1 {
+body #user-info #user-account #greetings h1 {
   font-size: 50px;
 }
-
 body #user-info #user-account #greetings #manage-profile {
   text-align: left;
   font-size: 25px;
   padding-top: 40px;
   line-height: 50px;
 }
-
 body #user-info #user-account #greetings #manage-profile a {
   background-color: #9d4e15;
   color: white;
   padding: 5px;
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
+  align-self: center;
   border: 1px solid white;
   border-radius: 8px;
-  -webkit-box-shadow: 1px 1px 3px #706f6f;
-          box-shadow: 1px 1px 3px #706f6f;
+  box-shadow: 1px 1px 3px #706f6f;
 }
-
 body #user-info h1 {
   font-size: 50px;
 }
@@ -478,4 +335,17 @@ body #user-info h1 {
   }
 }
 
+.message{
+  animation-name: message;
+  animation-duration: 5s;
+}
+
+@keyframes message {
+  from{
+    opacity: 1;
+  }
+  to{
+    opacity: 0;
+  }
+}
 /*# sourceMappingURL=main.css.map */

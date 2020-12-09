@@ -238,13 +238,13 @@ body {
             align-self: flex-start;
           }
 
-          .preferences {
-            display: grid;
+          #preferences {
+            display: flex;
             justify-content: center;
-            grid-template-columns: auto auto;
+            // grid-template-columns: auto auto;
             gap: 10px;
-            text-align: left;
-            padding-left: 20px;
+            // text-align: left;
+            // padding-left: 20px;
             margin: auto;
             width: 50%;
 
@@ -393,14 +393,9 @@ body {
               display: flex;
               flex-direction: column;
               
-              #name-flag {
-                display: flex;
-
-                h1 {
-                  font-size: 50px;
-                }
+              h1 {
+                font-size: 50px;
               }
-              
 
               #manage-profile {
                 text-align: left;
@@ -437,7 +432,4 @@ body {
     margin-left: 10px;
   }
 }
-
-
-
 
