@@ -34,7 +34,7 @@
     <div id="register-background">
         
     </div>
-
+    <?php if (isset($_SESSION['checkmail'])) : ?>
     <!-- password form -->
     <form action="passwordchange.php" method="post" id="user-form">
     <?php include('errors.php'); ?>
@@ -49,6 +49,6 @@
 
         <input type="submit" value="Change my password" id="btn" name="forgot_pw">
     </form>    
-    
+    <?php endif ?>
 </body>
 </html>
