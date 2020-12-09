@@ -44,7 +44,7 @@ include('server.php');
             </div>
             <div>
                 <label for="password">Password: </label>
-                <input type="password" name="password" required>
+                <input type="password" name="password" required autocomplete="on">
             </div>
             <button type="submit" name="login_user"> Login </button>
 
