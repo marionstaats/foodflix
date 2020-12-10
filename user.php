@@ -17,7 +17,49 @@
   $userId = $userData['id'];
   $userLang = $userData['language'];
 
-  // Deleting account
+  // Update account
+  if(isset($_POST['update'])){
+    // Get form data
+    $_varForUpdate = [];
+
+    if(!empty($_POST['usernameUpdate'])) {
+      $usernameUpdate = mysqli_real_escape_string($db, $_POST['usernameUpdate']);
+      $usernameCell = " username = '$usernameUpdate' ";
+      $_varForUpdate[] = $usernameCell;
+    };
+
+    if(!empty($_POST['emailUpdate'])) {
+      $emailUpdate = mysqli_real_escape_string($db, $_POST['emailUpdate']);
+      $emailCell = " email = '$emailUpdate' ";
+      $_varForUpdate[] = $emailCell;
+    };
+
+    if(!empty($_POST['genderUpdate'])) {
+      $genderUpdate = mysqli_real_escape_string($db, $_POST['genderUpdate']);
+      $genderCell = " gender = '$genderUpdate' ";
+      $_varForUpdate[] = $genderCell;
+    };
+    
+    if(!empty($_POST['languageUpdate'])) {
+      $languageUpdate = mysqli_real_escape_string($db, $_POST['languageUpdate']);
+      $languageCell = " language = '$languageUpdate' ";
+      $_varForUpdate[] = $languageCell;
+    };
+    
+    $strToQuery = implode (", ", $_varForUpdate);
+
+    $queryUpdate = "UPDATE user SET" . $strToQuery . "WHERE id = '$userId'";
+		
+    if(mysqli_query($db, $queryUpdate)){
+			header('Location: http://localhost/foodflix/login.php');
+		} else {
+			echo 'ERROR: '. mysqli_error($db);
+		}
+
+  }
+
+
+  // Delete account
 	if(isset($_POST['delete'])){
 		// Get form data
 		$delete_id = mysqli_real_escape_string($db, $_POST['delete_id']);
@@ -49,6 +91,20 @@
     // get data from videos table
     $queryUserVideo = "SELECT * FROM videos WHERE idUser='$userId' GROUP BY link ORDER BY date DESC";
     $resultUserVideo = mysqli_query($db, $queryUserVideo);
+  }
+
+  // Delete video
+	if(isset($_POST['delete_video'])){
+		// Get form data
+		$video_id = mysqli_real_escape_string($db, $_POST['video_id']);
+    $queryDeleteVideo = "DELETE FROM videos WHERE idVideo =" .$video_id;
+    
+    if(mysqli_query($db, $queryDeleteVideo)){
+			header('Location: http://localhost/foodflix/user.php');
+		} else {
+			echo 'ERROR: '. mysqli_error($db);
+		}
+
   }
 ?>
 
@@ -113,13 +169,38 @@
             <p id="email">Email: <?php echo $userEmail; ?></p>
             <p id="password">Password: ****</p>
 
-            <a href="registration.php">Manage my profile</a>
+            <button id="update-btn" style="background-color: #9d4e15; color: white; padding: 5px; align-self: center; border: 1px solid white; border-radius: 8px; box-shadow: 1px 1px 3px #706f6f; font-size: 25px;">Manage my profile</button>
+            <!-- update user-info in database -->
+            <form class="hide" id="update-form" method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>" style="text-align: center;">
+                <fieldset style="padding: 5px; margin-top: 10px; margin-bottom: 10px;">
+                  <a href="###" id="close_window" style="display: flex; justify-content: flex-end"><i class="far fa-window-close" style="color: #9d4e15"></i></a><br>
+                  
+                  <label for="usernameUpdate">Change my name:</label>
+                  <input type="text" name="usernameUpdate"> <br>
+
+                  <label for="emailUpdate">Change my email:</label>
+                  <input type="email" name="emailUpdate"> <br>
+
+                  <input type="radio" name="languageUpdate" value="english" checked>
+                  <label for="english">English</label>
+                  <input type="radio" name="languageUpdate" value="french">
+                  <label for="french">French</label><br>
+
+                  <input type="radio" name="genderUpdate" value="male" checked>
+                  <label for="male">Man</label>
+                  <input type="radio" name="genderUpdate" value="female">
+                  <label for="female">Woman</label><br>
+
+                  <input type="submit" name="update" value="Update my profile" style="color: white; background-color: #874312; padding: 5px; border: 1px solid white; border-radius: 8px; font-size: 15px">
+                  <br>
+                </fieldset>
+            </form>
             <!-- delete btn -->
             <div class="input-btn">
               <form method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>">
-              <input type="hidden" name="delete_id" value="<?php echo $userData['id']; ?>">
-              <input type="submit" name="delete" value="Delete my account" style="color: white; background-color: #874312; padding: 5px; border: 1px solid white; border-radius: 8px; font-size: 15px">
-            </form>
+                <input type="hidden" name="delete_id" value="<?php echo $userData['id']; ?>">
+                <input type="submit" name="delete" value="Delete my account" style="color: white; background-color: #874312; padding: 5px; border: 1px solid white; border-radius: 8px; font-size: 15px">
+              </form>
             </div>
             
           </div>
@@ -135,12 +216,17 @@
           ?>
           <div>
             <iframe class="youtube" src="<?php echo($row["link"])?>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+            <br>
+            <form method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+                <input type="hidden" name="video_id" value="<?php echo $row['idVideo']; ?>">
+                <input type="submit" name="delete_video" value="Delete video" style="color: white; background-color: #874312; padding: 5px; border: 1px solid white; border-radius: 8px; font-size: 15px">
+            </form>
             <br><br>
           </div>
           <?php
       }
       ?>  
     </div>
-
+    <script src="javascript/user_update.js"></script>
 </body>
 </html>

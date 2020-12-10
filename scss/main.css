@@ -10,6 +10,10 @@
   text-decoration: none;
 }
 
+.hide {
+  display: none;
+}
+
 body {
   margin: 2em;
   text-align: center;
@@ -444,7 +448,7 @@ body #user-info #user-account #greetings #manage-profile {
   line-height: 50px;
 }
 
-body #user-info #user-account #greetings #manage-profile a {
+body #user-info #user-account #greetings #manage-profile #update-btn {
   background-color: #9d4e15;
   color: white;
   padding: 5px;
@@ -460,6 +464,8 @@ body #user-info #user-account #greetings #manage-profile a {
 body #user-info h1 {
   font-size: 50px;
 }
+
+
 
 @media only screen and (max-width: 600px) {
   body {

@@ -16,8 +16,8 @@ $gender = "";
 $errors = array();
 
 //connect to db
-$db = mysqli_connect('sql210.epizy.com','epiz_27350002','rbxI8DLfu7M','epiz_27350002_foodflix') or die("could not connect to database"); //server, user, pw, database name
-// $db = mysqli_connect('localhost','root','','foodflix') or die("could not connect to database"); //server, user, pw, database name
+// $db = mysqli_connect('sql210.epizy.com','epiz_27350002','rbxI8DLfu7M','epiz_27350002_foodflix') or die("could not connect to database"); //server, user, pw, database name
+$db = mysqli_connect('localhost','root','root','foodflix') or die("could not connect to database"); //server, user, pw, database name
 
 //Registering users
 
@@ -73,7 +73,7 @@ if(isset($_POST['reg_user'])){
         
         $_SESSION['username'] = $username;
         $_SESSION['success'] = "You are now logged in";
-        mail($email, "Welcome at Foodflix, please confirm your subscription.", "To confirm your subscription please click on the link just below : \n\n http://foodflix.rf.gd/login.php?id=$id&token=$token");
+        mail($email, "Welcome at Foodflix, please confirm your subscription.", "To confirm your subscription please click on the link just below : \n\n http://lockalhost/foodflix/login.php?id=$id&token=$token");
         header('location: login.php');
     }
 }
@@ -103,7 +103,7 @@ if(isset($_POST['mail_pw'])){
     $email = $_POST['username_pw'];
     $query7= "SELECT confirmation_token FROM user WHERE email='$email'";
     $token = mysqli_fetch_assoc(mysqli_query($db,$query7))['confirmation_token'];
-    mail($email, "Welcome at Foodflix, please change your password.", "To change your password please click on the link just below : \n\n http://foodflix.rf.gd/passwordchange.php?email=$email&token=$token");
+    mail($email, "Welcome at Foodflix, please change your password.", "To change your password please click on the link just below : \n\n http://lockalhost/foodflix/passwordchange.php?email=$email&token=$token");
 }
 
 

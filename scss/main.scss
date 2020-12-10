@@ -404,7 +404,7 @@ body {
                 padding-top: 40px;
                 line-height: 50px;
 
-                a{
+                #update-btn {
                   background-color: #9d4e15;
                   color: white;      
                   padding: 5px;                  
@@ -426,6 +426,10 @@ body {
         
       }
 
+}
+
+.hide {
+  display: none;
 }
 
 @media only screen and (max-width: 600px) {
