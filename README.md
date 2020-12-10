@@ -15,14 +15,16 @@ This is site for finding recipes in youtube and possibility to save favorite rec
 
 3. Page for confirmation of exist user-email with possibility to get e-mail in user post-box with link for confirmation. Link consist id of new user and token.
 
-![Confirmation-page](./wireframes/confirm.png)
+  ![Confirmation-page](./wireframes/confirm.png)
 
 4. Home page with search-bar, video of recipes, button for saving recipes and icons to user-account and log out.
 
-![Home page](./wireframes/index.png)
+  ![Home page](./wireframes/index.png)
 
 5. User-account with private information about user, saving videos, icons to home-page and log-out and possibilities update your account, delete it or delete video.
-![User-page](./wireframes/user.png)
+
+  ![User-page](./wireframes/user.png)
+
 
 6. Pages for restore password:   
 6.1. Ask the user-email
